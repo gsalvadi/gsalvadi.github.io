@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Composer & Writer</title>
+    <title>Gokul Salvadi</title>
     <style>
         * {
             margin: 0;
@@ -13,460 +13,685 @@
 
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #5B3515;
             background: #F5F1E8;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        header {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 80px;
+            position: relative;
+            background: linear-gradient(135deg, #F5F1E8 0%, #f0ebe0 50%, #F5F1E8 100%);
         }
 
-        h1 {
-            font-size: 3.5em;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='musical' patternUnits='userSpaceOnUse' width='100' height='100'%3E%3Cpath d='M20,20 Q40,10 60,20 T100,20' stroke='%235B3515' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23musical)'/%3E%3C/svg%3E") repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 300;
-            margin-bottom: 20px;
-            color: #5B3515;
-            letter-spacing: -2px;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #7d5a39;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            font-size: 1.1em;
-            max-width: 600px;
-            margin: 0 auto;
-            color: #7d5a39;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .divider {
-            width: 60px;
-            height: 2px;
-            background: #5B3515;
-            margin: 60px auto;
-        }
-
-        .work-section {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #5B3515;
+            letter-spacing: -3px;
             margin-bottom: 40px;
-            text-align: center;
-            font-weight: 300;
+            color: #5B3515;
+            text-shadow: 2px 2px 4px rgba(91, 53, 21, 0.1);
         }
 
-        .work-grid {
-            display: grid;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .work-item {
-            text-align: center;
-            padding: 30px;
-            background: rgba(91, 53, 21, 0.03);
-            border-radius: 10px;
+        .availability {
+            font-size: 1.1rem;
+            color: #5B3515;
+            padding: 15px 30px;
+            border: 2px solid #5B3515;
+            border-radius: 50px;
+            background: rgba(245, 241, 232, 0.8);
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .availability:hover {
+            background: #5B3515;
+            color: #F5F1E8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(91, 53, 21, 0.2);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            padding: 0 40px;
+        }
+
+        .artwork {
+            position: relative;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
             border: 1px solid rgba(91, 53, 21, 0.1);
         }
 
-        .work-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(91, 53, 21, 0.1);
+        .artwork:hover {
+            transform: translateY(-10px) rotate(0.5deg);
+            box-shadow: 0 20px 60px rgba(91, 53, 21, 0.15);
         }
 
-        .work-type {
-            font-size: 0.9em;
+        .artwork-header {
+            padding: 40px 40px 20px;
+            text-align: center;
+        }
+
+        .artwork-type {
+            font-size: 0.85rem;
             color: #7d5a39;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .work-title {
-            font-size: 1.4em;
-            color: #5B3515;
+            letter-spacing: 2px;
             margin-bottom: 15px;
             font-weight: normal;
         }
 
-        .work-description {
+        .artwork-title {
+            font-size: 2rem;
+            color: #5B3515;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .artwork-description {
+            font-size: 1rem;
             color: #7d5a39;
-            margin-bottom: 25px;
             line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        .embed-container {
-            margin: 20px 0;
-            padding: 30px;
+        .artwork-media {
+            position: relative;
+            margin: 0 20px 30px;
+            border-radius: 15px;
+            overflow: hidden;
             background: #faf8f2;
-            border-radius: 8px;
-            border: 1px solid rgba(91, 53, 21, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .embed-container iframe {
-            max-width: 100%;
-            border-radius: 6px;
+        .artwork-media iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: none;
         }
 
-        .links {
+        .artwork-links {
+            padding: 0 40px 40px;
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        .link-button {
-            display: inline-block;
+        .art-link {
             color: #5B3515;
             text-decoration: none;
+            font-size: 0.9rem;
             padding: 8px 20px;
-            border: 1px solid #5B3515;
+            border: 1px solid rgba(91, 53, 21, 0.3);
             border-radius: 25px;
-            font-size: 0.9em;
             transition: all 0.3s ease;
-            background: transparent;
+            background: rgba(245, 241, 232, 0.5);
         }
 
-        .link-button:hover {
+        .art-link:hover {
             background: #5B3515;
             color: #F5F1E8;
             transform: translateY(-2px);
         }
 
-        .contact-section {
-            text-align: center;
-            padding: 60px 0;
+        /* Featured Work */
+        .featured {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .featured .artwork-title {
+            font-size: 2.5rem;
+        }
+
+        /* Sheet Music Section */
+        .sheet-music {
             background: rgba(91, 53, 21, 0.03);
-            border-radius: 15px;
-            margin-top: 80px;
+            padding: 80px 40px;
+            text-align: center;
         }
 
-        .contact-title {
-            font-size: 2.2em;
+        .section-title {
+            font-size: 2.5rem;
             color: #5B3515;
-            margin-bottom: 20px;
             font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
         }
 
-        .contact-text {
-            font-size: 1.1em;
+        .section-description {
+            font-size: 1.1rem;
             color: #7d5a39;
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin-bottom: 50px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
         }
 
-        .contact-info {
+        .sheet-links {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
-        .contact-item {
+        .sheet-link {
+            display: inline-block;
+            background: #5B3515;
+            color: #F5F1E8;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sheet-link:hover {
+            background: #7d5a39;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(91, 53, 21, 0.2);
+        }
+
+        /* Literature Section - Placeholder */
+        .literature {
+            padding: 80px 40px;
+            text-align: center;
+            background: rgba(91, 53, 21, 0.02);
+        }
+
+        .coming-soon {
+            font-size: 1.2rem;
+            color: #7d5a39;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .placeholder-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .placeholder-link {
+            color: #7d5a39;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 12px 25px;
+            border: 2px dashed rgba(91, 53, 21, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .placeholder-link:hover {
+            opacity: 1;
+            border-color: #5B3515;
+            color: #5B3515;
+        }
+
+        /* Social Media Section */
+        .social {
+            padding: 60px 40px;
+            text-align: center;
+            background: rgba(91, 53, 21, 0.05);
+        }
+
+        .social h3 {
+            font-size: 1.5rem;
+            color: #5B3515;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-link:hover {
+            color: #7d5a39;
+            transform: translateY(-2px);
+        }
+
+        /* Commission Section */
+        .commission {
+            background: linear-gradient(135deg, rgba(91, 53, 21, 0.05) 0%, rgba(91, 53, 21, 0.02) 100%);
+            padding: 100px 40px;
             text-align: center;
         }
 
-        .contact-label {
-            font-size: 0.9em;
-            color: #7d5a39;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .contact-value {
-            font-size: 1.1em;
-            color: #5B3515;
-        }
-
-        .contact-value a {
-            color: #5B3515;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-value a:hover {
-            color: #7d5a39;
-        }
-
-        .contact-form {
-            max-width: 500px;
+        .commission-content {
+            max-width: 600px;
             margin: 0 auto;
-            text-align: left;
         }
 
-        .form-row {
+        .commission h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #5B3515;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .commission-text {
+            font-size: 1.2rem;
+            color: #7d5a39;
+            margin-bottom: 50px;
+            line-height: 1.7;
+        }
+
+        .commission-form {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(91, 53, 21, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin-bottom: 25px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group.full-width {
             grid-column: 1 / -1;
         }
 
-        input, textarea {
+        .form-input {
             width: 100%;
-            padding: 15px;
-            border: 1px solid rgba(91, 53, 21, 0.2);
-            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid rgba(91, 53, 21, 0.1);
+            border-radius: 15px;
             font-family: 'Georgia', serif;
-            font-size: 1em;
-            background: #faf8f2;
+            font-size: 1rem;
+            background: rgba(245, 241, 232, 0.5);
             color: #5B3515;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        input:focus, textarea:focus {
+        .form-input:focus {
             outline: none;
             border-color: #5B3515;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: #7d5a39;
-            opacity: 0.7;
-        }
-
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #5B3515;
-            color: #F5F1E8;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
-            display: block;
-            margin: 30px auto 0;
-        }
-
-        .submit-btn:hover {
-            background: #7d5a39;
+            background: rgba(245, 241, 232, 0.8);
             transform: translateY(-2px);
         }
 
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(91, 53, 21, 0.1);
+        .form-input::placeholder {
             color: #7d5a39;
-            font-size: 0.9em;
+            opacity: 0.8;
         }
 
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .commission-btn {
+            background: #5B3515;
+            color: #F5F1E8;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+
+        .commission-btn:hover {
+            background: #7d5a39;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(91, 53, 21, 0.3);
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
             }
-            
-            h1 {
-                font-size: 2.5em;
+
+            .artwork-header, .artwork-links {
+                padding-left: 20px;
+                padding-right: 20px;
             }
-            
-            .contact-info {
-                flex-direction: column;
+
+            .commission, .sheet-music, .literature, .social {
+                padding: 60px 20px;
+            }
+
+            .commission-form {
+                padding: 30px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .links {
-                gap: 10px;
-            }
-        }
 
-        /* Edit indicators - remove these in production */
-        .edit-zone {
-            border: 2px dashed #ff6b6b;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background: rgba(255, 107, 107, 0.03);
-        }
+            .hero {
+                padding: 0 20px;
+            }
 
-        .edit-note {
-            color: #ff6b6b;
-            font-size: 0.85em;
-            font-style: italic;
-            margin-bottom: 10px;
-            text-align: left;
+            .sheet-links, .placeholder-links, .social-links {
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="edit-zone">
-                <div class="edit-note">EDIT: Replace with your name</div>
-                <h1>Your Name</h1>
-                <p class="subtitle">Composer & Writer</p>
-                <div class="intro">
-                    <p>Creating music that tells stories and stories that sing. Available for commissions, collaborations, and creative projects.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gokul Salvadi</h1>
+            <div class="availability" onclick="document.querySelector('.commission').scrollIntoView({behavior: 'smooth'})">
+                Contact for Commissions & Collaborations
             </div>
-        </header>
+        </div>
+    </section>
 
-        <!-- Compositions -->
-        <section class="work-section">
-            <h2 class="section-title">Recent Compositions</h2>
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-grid">
             
-            <div class="work-grid">
-                <div class="edit-zone">
-                    <div class="edit-note">TEMPLATE: Copy this block for each composition</div>
-                    <div class="work-item">
-                        <div class="work-type">Piano Solo</div>
-                        <h3 class="work-title">Autumn Reverie</h3>
-                        <p class="work-description">A contemplative piece in three movements, capturing the changing seasons through melodic transformation.</p>
-                        
-                        <div class="embed-container">
-                            <!-- EDIT: Add your SoundCloud/YouTube/Bandcamp embed -->
-                            <p style="color: #7d5a39; font-style: italic;">Add your music embed here</p>
-                            <!-- Example: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=YOUR_URL"></iframe> -->
-                        </div>
-                        
-                        <div class="links">
-                            <a href="#" class="link-button">Listen</a>
-                            <a href="#" class="link-button">Sheet Music</a>
-                            <a href="#" class="link-button">Program Notes</a>
-                        </div>
-                    </div>
+            <!-- Featured Work - Burden of the Light -->
+            <article class="artwork featured fade-in">
+                <div class="artwork-header">
+                    <div class="artwork-type">Featured Pre-Order</div>
+                    <h2 class="artwork-title">Burden of the Light</h2>
+                    <p class="artwork-description">A trilogy for string orchestra exploring the journey from darkness to illumination. Three movements trace the arc of transformation—from breakthrough to understanding to becoming the light itself. Ancient forms meet contemporary experience.</p>
                 </div>
-
-                <!-- Copy the above block for more compositions -->
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Writing -->
-        <section class="work-section">
-            <h2 class="section-title">Recent Writing</h2>
-            
-            <div class="work-grid">
-                <div class="edit-zone">
-                    <div class="edit-note">TEMPLATE: Copy this block for each writing piece</div>
-                    <div class="work-item">
-                        <div class="work-type">Essay</div>
-                        <h3 class="work-title">"The Mathematics of Music"</h3>
-                        <p class="work-description">Exploring the mathematical relationships that underlie musical harmony and their impact on emotional response.</p>
-                        
-                        <div class="links">
-                            <a href="#" class="link-button">Read Online</a>
-                            <a href="#" class="link-button">Download PDF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copy the above block for more writing pieces -->
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <h2 class="contact-title">Commission Work</h2>
-            
-            <div class="edit-zone">
-                <div class="edit-note">EDIT: Update your contact information and commission details</div>
-                <p class="contact-text">
-                    I'm currently accepting commissions for original compositions and writing projects. Whether you need music for a special occasion, performance, or publication, let's discuss how we can bring your vision to life.
-                </p>
                 
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">
-                            <a href="mailto:your.email@example.com">your.email@example.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-label">Phone</div>
-                        <div class="contact-value">(555) 123-4567</div>
-                    </div>
+                <div class="artwork-media">
+                    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=F5F1E8/linkcol=5B3515/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
                 </div>
-            </div>
+                
+                <div class="artwork-links">
+                    <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Pre-Order & RSVP</a>
+                </div>
+            </article>
 
-            <form class="contact-form">
-                <div class="form-row">
+            <!-- From Darkness to Light -->
+            <article class="artwork fade-in">
+                <div class="artwork-header">
+                    <div class="artwork-type">From the Trilogy</div>
+                    <h3 class="artwork-title">From Darkness to Light</h3>
+                    <p class="artwork-description">A passacaglia in F minor—twelve variations on an unchanging bass line. The same notes cycle and spiral, repetition slowly becoming revelation. What begins as constraint transforms into liberation, showing how we emerge not through sudden breakthrough but patient ascent, each turn bringing more light.</p>
+                </div>
+                
+                <div class="artwork-media">
+                    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=F5F1E8/linkcol=5B3515/tracklist=false/track=3093920661/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">From Darkness to Light by Gokul Salvadi</a></iframe>
+                </div>
+                
+                <div class="artwork-links">
+                    <a href="https://gsalvadi.bandcamp.com/track/from-darkness-to-light-passacaglia-in-f-minor" class="art-link">Listen</a>
+                    <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Full Album</a>
+                </div>
+            </article>
+
+            <!-- Echoes in My Chamber -->
+            <article class="artwork fade-in">
+                <div class="artwork-header">
+                    <div class="artwork-type">Theme & Variations</div>
+                    <h3 class="artwork-title">Echoes in My Chamber</h3>
+                    <p class="artwork-description">A theme and fourteen variations that began with a simple melody—the kind that feels like it's always existed. Each variation becomes a conversation with musical memory: flowing Alberti bass, romantic whispers, virtuosic bursts, impressionist colors. The "chamber" is both the room of composition and the space where musical echoes live and breathe together.</p>
+                </div>
+                
+                <div class="artwork-media">
+                    <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=1345806595/size=large/bgcol=F5F1E8/linkcol=5B3515/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/track/echoes-in-my-chamber">Echoes in My Chamber by Gokul Salvadi</a></iframe>
+                </div>
+                
+                <div class="artwork-links">
+                    <a href="https://gsalvadi.bandcamp.com/track/echoes-in-my-chamber" class="art-link">Listen</a>
+                    <a href="https://gsalvadi.bandcamp.com/track/echoes-in-my-chamber" class="art-link">Download</a>
+                </div>
+            </article>
+
+            <!-- Sonatina con Valzer -->
+            <article class="artwork fade-in">
+                <div class="artwork-header">
+                    <div class="artwork-type">Classical Guitar • Free Download</div>
+                    <h3 class="artwork-title">Sonatina con Valzer</h3>
+                    <p class="artwork-description">A three-minute classical guitar piece weaving waltz elements through chromatic harmonies. For those who turn off fans to hear the rain, who choose peaceful nights over noisy crowds, who know the most meaningful conversations happen in whispers. Free download available.</p>
+                </div>
+                
+                <div class="artwork-media">
+                    <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=2008834821/size=large/bgcol=F5F1E8/linkcol=5B3515/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/track/sonatina-con-valzer">Sonatina con Valzer by Gokul Salvadi</a></iframe>
+                </div>
+                
+                <div class="artwork-links">
+                    <a href="https://gsalvadi.bandcamp.com/track/sonatina-con-valzer" class="art-link">Free Download</a>
+                    <a href="https://gsalvadi.bandcamp.com/track/sonatina-con-valzer" class="art-link">Listen</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Sheet Music Section -->
+    <section class="sheet-music fade-in">
+        <h2 class="section-title">Sheet Music</h2>
+        <p class="section-description">
+            Professional scores available for performance and study. High-quality editions with detailed performance notes.
+        </p>
+        
+        <div class="sheet-links">
+            <a href="https://www.sheetmusicplus.com/en/category/publishers/g/gokul-salvadi/" class="sheet-link" target="_blank">Sheet Music Plus</a>
+            <a href="https://www.sheetmusicdirect.com/de-DE/Search.aspx?query=Gokul+Salvadi" class="sheet-link" target="_blank">Sheet Music Direct</a>
+        </div>
+    </section>
+
+    <!-- Literature Section -->
+    <section class="literature fade-in">
+        <h2 class="section-title">Literature</h2>
+        <p class="section-description">Cross-cultural works exploring identity, belonging, and the spaces between languages.</p>
+        
+        <!-- PLACEHOLDER LINKS - UPDATE THESE WITH YOUR ACTUAL URLS -->
+        <div class="sheet-links">
+            <a href="#" class="sheet-link">Tamil Poetry Collection</a>
+            <a href="#" class="sheet-link">Digital Literary Magazine</a>
+        </div>
+        
+        <!-- 
+        TO ACTIVATE:
+        1. Replace href="#" with your actual book and magazine URLs
+        2. Update titles if needed
+        3. Modify section-description above if needed
+        4. Remove these comments
+        -->
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social fade-in">
+        <h3>Connect</h3>
+        <div class="social-links">
+            <a href="https://x.com/gsalvadi" class="social-link" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/@gokulsalvadi" class="social-link" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/gsalvadi/" class="social-link" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <!-- Commission Section -->
+    <section class="commission">
+        <div class="commission-content">
+            <h2>Commission</h2>
+            <p class="commission-text">
+                Use the form below for commissions, collaborations, or to share your thoughts on the music.
+            </p>
+
+            <form class="commission-form fade-in">
+                <div class="form-grid">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" class="form-input" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" class="form-input" name="email" placeholder="Email Address" required>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <input type="text" name="subject" placeholder="Project Type (e.g., Wedding Music, Chamber Piece, Article)">
+                <div class="form-group full-width">
+                    <input type="text" class="form-input" name="project" placeholder="Subject">
                 </div>
                 
-                <div class="form-group">
-                    <textarea name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+                <div class="form-group full-width">
+                    <textarea class="form-input form-textarea" name="message" placeholder="Share your thoughts on the music, discuss a commission, or just say hello..." required></textarea>
                 </div>
                 
-                <button type="submit" class="submit-btn">Send Commission Inquiry</button>
+                <button type="submit" class="commission-btn">Send Message</button>
             </form>
-        </section>
-
-        <footer>
-            <div class="edit-zone">
-                <div class="edit-note">EDIT: Update footer info</div>
-                <p>&copy; 2025 Your Name. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
     <script>
-        // Simple contact form handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your commission inquiry! I\'ll get back to you within 24 hours.');
-            this.reset();
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
 
-        // Smooth scroll for any internal links (if added later)
+        // Form submission
+        document.querySelector('.commission-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add success animation
+            const btn = this.querySelector('.commission-btn');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'Message Sent!';
+            btn.style.background = '#7d5a39';
+            
+            setTimeout(() => {
+                alert('Thank you for reaching out! I\'ll be in touch soon.');
+                this.reset();
+                btn.textContent = originalText;
+                btn.style.background = '#5B3515';
+            }, 1000);
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Hover effects for artworks
+        document.querySelectorAll('.artwork').forEach(artwork => {
+            artwork.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            artwork.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
