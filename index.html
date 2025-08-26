@@ -351,77 +351,37 @@
             line-height: 1.7;
         }
 
-        .commission-form {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid rgba(91, 53, 21, 0.1);
-            backdrop-filter: blur(10px);
+        /* Contact Mailto */
+        .contact-mailto {
+            text-align: center;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 20px;
-            border: 2px solid rgba(91, 53, 21, 0.1);
-            border-radius: 15px;
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            background: rgba(245, 241, 232, 0.5);
-            color: #5B3515;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #5B3515;
-            background: rgba(245, 241, 232, 0.8);
-            transform: translateY(-2px);
-        }
-
-        .form-input::placeholder {
-            color: #7d5a39;
-            opacity: 0.8;
-        }
-
-        .form-textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .commission-btn {
+        .mailto-button {
+            display: inline-block;
             background: #5B3515;
             color: #F5F1E8;
             padding: 20px 50px;
-            border: none;
             border-radius: 50px;
+            text-decoration: none;
             font-size: 1.1rem;
             font-family: 'Georgia', serif;
-            cursor: pointer;
             transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
-        .commission-btn:hover {
+        .mailto-button:hover {
             background: #7d5a39;
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(91, 53, 21, 0.3);
+        }
+
+        .contact-note {
+            font-size: 0.95rem;
+            color: #7d5a39;
+            font-style: italic;
+            opacity: 0.8;
         }
 
         /* Scroll Animations */
@@ -610,31 +570,15 @@
                 Use the form below for commissions, collaborations, or to share your thoughts on the music.
             </p>
 
-            <form class="commission-form fade-in" action="https://formsubmit.co/music@beingokul.com" method="POST">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="New message from your website">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo-name/thank-you.html">
+            <div class="contact-mailto">
+                <a href="mailto:email@domain.com?subject=Commission%20Inquiry" class="mailto-button">
+                    Send Message
+                </a>
                 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" name="email" placeholder="Email Address" required>
-                    </div>
-                </div>
-                
-                <div class="form-group full-width">
-                    <input type="text" class="form-input" name="subject" placeholder="Subject">
-                </div>
-                
-                <div class="form-group full-width">
-                    <textarea class="form-input form-textarea" name="message" placeholder="Share your thoughts on the music, discuss a commission, or just say hello..." required></textarea>
-                </div>
-                
-                <button type="submit" class="commission-btn">Send Message</button>
-            </form>
+                <p class="contact-note">
+                    Click to open your email app with a pre-filled message
+                </p>
+            </div>
         </div>
     </section>
 
@@ -658,24 +602,7 @@
             observer.observe(el);
         });
 
-        // Form submission
-        document.querySelector('.commission-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Add success animation
-            const btn = this.querySelector('.commission-btn');
-            const originalText = btn.textContent;
-            
-            btn.textContent = 'Message Sent!';
-            btn.style.background = '#7d5a39';
-            
-            setTimeout(() => {
-                alert('Thank you for reaching out! I\'ll be in touch soon.');
-                this.reset();
-                btn.textContent = originalText;
-                btn.style.background = '#5B3515';
-            }, 1000);
-        });
+        // No form submission handling needed anymore - mailto handles everything
 
         // Add subtle parallax effect to hero
         window.addEventListener('scroll', () => {
