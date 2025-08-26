@@ -112,6 +112,10 @@
         .artwork-header {
             padding: 40px 40px 20px;
             text-align: center;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .artwork-type {
@@ -136,7 +140,7 @@
             color: #7d5a39;
             line-height: 1.6;
             margin-bottom: 30px;
-            height: 120px;
+            flex: 1;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 6;
@@ -606,7 +610,7 @@
                 Use the form below for commissions, collaborations, or to share your thoughts on the music.
             </p>
 
-            <form class="commission-form fade-in" action="https://formsubmit.co/email@domain.com" method="POST">
+            <form class="commission-form fade-in" action="https://formsubmit.co/music@beingokul.com" method="POST">
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="New message from your website">
                 <input type="hidden" name="_captcha" value="false">
