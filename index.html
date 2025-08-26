@@ -597,7 +597,12 @@
                 Use the form below for commissions, collaborations, or to share your thoughts on the music.
             </p>
 
-            <form class="commission-form fade-in">
+            <form class="commission-form fade-in" action="https://formsubmit.co/music@beingokul.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New message from your website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo-name/thank-you.html">
+                
                 <div class="form-grid">
                     <div class="form-group">
                         <input type="text" class="form-input" name="name" placeholder="Your Name" required>
@@ -608,7 +613,7 @@
                 </div>
                 
                 <div class="form-group full-width">
-                    <input type="text" class="form-input" name="project" placeholder="Subject">
+                    <input type="text" class="form-input" name="subject" placeholder="Subject">
                 </div>
                 
                 <div class="form-group full-width">
@@ -693,7 +698,5 @@
             });
         });
     </script>
-</body>
-</html>
 </body>
 </html>
