@@ -3,17 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokul Salvadi</title>
+    <title>Your Name - Composer & Writer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #5B3515;
+            background: #F5F1E8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #5B3515;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #7d5a39;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #7d5a39;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #5B3515;
+            margin: 60px auto;
+        }
+
+        .work-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #5B3515;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .work-grid {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .work-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(91, 53, 21, 0.03);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(91, 53, 21, 0.1);
+        }
+
+        .work-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(91, 53, 21, 0.1);
+        }
+
+        .work-type {
+            font-size: 0.9em;
+            color: #7d5a39;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .work-title {
+            font-size: 1.4em;
+            color: #5B3515;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .work-description {
+            color: #7d5a39;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .embed-container {
+            margin: 20px 0;
+            padding: 30px;
+            background: #faf8f2;
+            border-radius: 8px;
+            border: 1px solid rgba(91, 53, 21, 0.08);
+        }
+
+        .embed-container iframe {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .link-button {
+            display: inline-block;
+            color: #5B3515;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 1px solid #5B3515;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .link-button:hover {
+            background: #5B3515;
+            color: #F5F1E8;
+            transform: translateY(-2px);
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(91, 53, 21, 0.03);
+            border-radius: 15px;
+            margin-top: 80px;
+        }
+
+        .contact-title {
+            font-size: 2.2em;
+            color: #5B3515;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-text {
+            font-size: 1.1em;
+            color: #7d5a39;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-size: 0.9em;
+            color: #7d5a39;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            font-size: 1.1em;
+            color: #5B3515;
+        }
+
+        .contact-value a {
+            color: #5B3515;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #7d5a39;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(91, 53, 21, 0.2);
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            background: #faf8f2;
+            color: #5B3515;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #5B3515;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #7d5a39;
+            opacity: 0.7;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #5B3515;
+            color: #F5F1E8;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .submit-btn:hover {
+            background: #7d5a39;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(91, 53, 21, 0.1);
+            color: #7d5a39;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .links {
+                gap: 10px;
+            }
+        }
+
+        /* Edit indicators - remove these in production */
+        .edit-zone {
+            border: 2px dashed #ff6b6b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: rgba(255, 107, 107, 0.03);
+        }
+
+        .edit-note {
+            color: #ff6b6b;
+            font-size: 0.85em;
+            font-style: italic;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; font-family: Georgia, serif;">
-    <div style="padding: 20px; text-align: center; background: #f8f8f8;">
-     <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://beingokul.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="edit-zone">
+                <div class="edit-note">EDIT: Replace with your name</div>
+                <h1>Your Name</h1>
+                <p class="subtitle">Composer & Writer</p>
+                <div class="intro">
+                    <p>Creating music that tells stories and stories that sing. Available for commissions, collaborations, and creative projects.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Compositions -->
+        <section class="work-section">
+            <h2 class="section-title">Recent Compositions</h2>
+            
+            <div class="work-grid">
+                <div class="edit-zone">
+                    <div class="edit-note">TEMPLATE: Copy this block for each composition</div>
+                    <div class="work-item">
+                        <div class="work-type">Piano Solo</div>
+                        <h3 class="work-title">Autumn Reverie</h3>
+                        <p class="work-description">A contemplative piece in three movements, capturing the changing seasons through melodic transformation.</p>
+                        
+                        <div class="embed-container">
+                            <!-- EDIT: Add your SoundCloud/YouTube/Bandcamp embed -->
+                            <p style="color: #7d5a39; font-style: italic;">Add your music embed here</p>
+                            <!-- Example: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=YOUR_URL"></iframe> -->
+                        </div>
+                        
+                        <div class="links">
+                            <a href="#" class="link-button">Listen</a>
+                            <a href="#" class="link-button">Sheet Music</a>
+                            <a href="#" class="link-button">Program Notes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy the above block for more compositions -->
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Writing -->
+        <section class="work-section">
+            <h2 class="section-title">Recent Writing</h2>
+            
+            <div class="work-grid">
+                <div class="edit-zone">
+                    <div class="edit-note">TEMPLATE: Copy this block for each writing piece</div>
+                    <div class="work-item">
+                        <div class="work-type">Essay</div>
+                        <h3 class="work-title">"The Mathematics of Music"</h3>
+                        <p class="work-description">Exploring the mathematical relationships that underlie musical harmony and their impact on emotional response.</p>
+                        
+                        <div class="links">
+                            <a href="#" class="link-button">Read Online</a>
+                            <a href="#" class="link-button">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy the above block for more writing pieces -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="contact-title">Commission Work</h2>
+            
+            <div class="edit-zone">
+                <div class="edit-note">EDIT: Update your contact information and commission details</div>
+                <p class="contact-text">
+                    I'm currently accepting commissions for original compositions and writing projects. Whether you need music for a special occasion, performance, or publication, let's discuss how we can bring your vision to life.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">(555) 123-4567</div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Project Type (e.g., Wedding Music, Chamber Piece, Article)">
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Commission Inquiry</button>
+            </form>
+        </section>
+
+        <footer>
+            <div class="edit-zone">
+                <div class="edit-note">EDIT: Update footer info</div>
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-    
-    <iframe src="https://gsalvadi.bandcamp.com/" 
-            width="100%" 
-            height="800px" 
-            style="border: none; display: block;">
-    </iframe>
+
+    <script>
+        // Simple contact form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your commission inquiry! I\'ll get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Smooth scroll for any internal links (if added later)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
