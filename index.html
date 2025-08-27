@@ -100,11 +100,11 @@
 
         .artwork {
             position: relative;
-            background: rgba(255, 255, 255, 0.6);
+         background: transparent;
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 1px solid rgba(91, 53, 21, 0.1);
+            border: none;
             break-inside: avoid;
           break-inside: avoid;
           page-break-inside: avoid;         
@@ -118,10 +118,9 @@
             box-shadow: 0 20px 60px rgba(91, 53, 21, 0.15);
         }
 
-        .artwork-header {
-            padding: 40px 40px 20px;
-            text-align: center;
-        }
+       .artwork-header {
+    display: none;
+            }
 
         .artwork-type {
             font-size: 0.85rem;
@@ -164,14 +163,9 @@
             border: none;
         }
 
-        .artwork-links {
-            padding: 0 40px 40px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
+     .artwork-links {
+    display: none;
+}
         .art-link {
             color: #5B3515;
             text-decoration: none;
