@@ -79,22 +79,23 @@
         }
 
         /* Gallery Section - Masonry Layout */
-        .gallery {
-            padding: 80px 0;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+   .gallery-grid {
+    column-count: 1;
+    column-gap: 60px;
+    padding: 0 40px;
+}
 
-        .gallery-grid {
-            column-count: 2;
-            column-gap: 60px;
-            padding: 0 40px;
-        }
+@media (min-width: 768px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+}
 
-        @media (min-width: 900px) {
-            .gallery-grid {
-                column-count: 3;
-            }
+@media (min-width: 1100px) {
+    .gallery-grid {
+        column-count: 3;
+    }
+}
         }
 
         .artwork {
