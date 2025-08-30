@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Gokul Salvadi</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #5B3515;
+            background: #F5F1E8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1, h2 {
+            color: #5B3515;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p, li {
+            margin-bottom: 15px;
+            color: #7d5a39;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            color: #5B3515;
+        }
+        
+        a {
+            color: #5B3515;
+            text-decoration: none;
+            border-bottom: 1px solid #5B3515;
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        .back-link {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #7d5a39;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Site</a>
+    </div>
+    
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: January 2025</p>
+    
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy describes how I collect and use the email addresses you provide when signing up for my mailing list for news and updates, as well as information you share for commission inquiries. By providing your information, you consent to its collection and use as described here.</p>
+    
+    <h2>2. What I Collect</h2>
+    <ul>
+        <li><strong>Mailing List:</strong> I collect your email address and name (if provided) when you subscribe to receive updates.</li>
+        <li><strong>Commissions:</strong> If you contact me for a commission, I collect the personal information you voluntarily provide in your message, such as your name, email, and details about the project.</li>
+    </ul>
+    
+    <h2>3. How I Use Your Information</h2>
+    <ul>
+        <li><strong>Newsletter:</strong> Email addresses and names are used solely to send you updates about new releases, performances, and other relevant news. I may also include links to third-party sites like Bandcamp for music and merchandise sales.</li>
+        <li><strong>Commissions:</strong> Contact information provided for commissions is used to communicate with you, respond to your inquiry, and fulfill the project.</li>
+        <li><strong>No Sharing:</strong> I never share or sell your information to third parties for their marketing purposes.</li>
+    </ul>
+    
+    <h2>4. Third-Party Services</h2>
+    <ul>
+        <li>I use Zoho Campaigns to manage my mailing list. Their privacy policy governs how they handle your data within their service.</li>
+        <li>Please be aware that any links provided to external sites, like Bandcamp, operate under their own privacy policies. I encourage you to review these policies for information on how they handle your data, especially for purchases.</li>
+    </ul>
+    
+    <h2>5. Your Rights</h2>
+    <ul>
+        <li><strong>Unsubscribe:</strong> You can opt out of my email updates at any time using the "unsubscribe" link located in the footer of every email.</li>
+        <li><strong>Access and Deletion:</strong> You can request to access the personal data I hold about you or request its complete deletion from my systems (the "right to be forgotten"). To do so, please contact me directly.</li>
+    </ul>
+    
+    <h2>6. Data Storage and Security</h2>
+    <ul>
+        <li>Newsletter data is stored securely with Zoho Campaigns, which uses industry-standard security measures, such as data encryption, to protect your information.</li>
+        <li>I retain your data for as long as you remain subscribed or as necessary to manage a commission inquiry. Upon your request to delete your data, it will be permanently removed in accordance with legal requirements.</li>
+    </ul>
+    
+    <h2>7. Changes to This Privacy Policy</h2>
+    <p>I may update this policy occasionally. I will notify you of any significant changes by posting the revised policy on my site and updating the "Last Updated" date.</p>
+    
+    <h2>8. Contact</h2>
+    <p>For any questions regarding this policy, or to exercise your privacy rights, please contact me at: email@domain.com</p>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html">Return to Main Site</a>
+    </div>
+</body>
+</html>
