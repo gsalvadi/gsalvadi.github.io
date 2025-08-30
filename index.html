@@ -618,10 +618,19 @@
 						<div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Email</div>
 						<input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
 					</div>
-					<div style="position: relative; margin: 5px 0 40px 10px; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
+					<div style="position: relative; margin: 5px 0 20px 10px; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
 						<div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Name</div>
 						<input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="LASTNAME" id="EMBED_FORM_NAME_LABEL">
 					</div>
+					
+					<!-- Privacy Policy Consent Checkbox -->
+					<div style="position: relative; margin: 10px; display: block; text-align: left;" class="SIGNUP_FLD">
+						<label style="display: flex; align-items: flex-start; gap: 8px; font-size: 11px; color: rgb(85, 85, 85); font-family: Arial; cursor: pointer;">
+							<input type="checkbox" name="privacy_consent" required style="margin-top: 2px; flex-shrink: 0;">
+							<span>I agree to the <a href="policy.html" target="_blank" style="color: rgb(91, 53, 21); text-decoration: underline;">Privacy Policy</a></span>
+						</label>
+					</div>
+					
 					<div style="position: relative; width: 100px; height: 28px; margin: 0 0 15px 12px; display: inline-block" class="SIGNUP_FLD">
 						<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; font-size: 14px; background-color: rgb(190, 96, 30); border-radius: 4px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
 					</div>
@@ -645,6 +654,7 @@
 					<span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
 					<span style="display: none" id="dt_FIRSTNAME">1,false,1,First Name,2</span>
 					<span style="display: none" id="dt_LASTNAME">1,false,1,Last Name,2</span>
+
 				</form>
 			</div>
 		</div>
@@ -661,7 +671,6 @@
 </div>
 
 <!--Zoho Campaigns Web-Optin Form Ends Here-->
-        
     </div>
 </section>
 
