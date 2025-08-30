@@ -79,39 +79,39 @@
         }
 
         /* Gallery Section - Masonry Layout */
-   .gallery-grid {
-    column-count: 1;
-    column-gap: 60px;
-    padding: 0 40px;
-}
-
-@media (min-width: 768px) {
-    .gallery-grid {
-        column-count: 2;
-    }
-}
-
-@media (min-width: 1100px) {
-    .gallery-grid {
-        column-count: 3;
-    }
-}
+        .gallery-grid {
+            column-count: 1;
+            column-gap: 60px;
+            padding: 0 40px;
         }
 
-.artwork {
-    position: relative;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(91, 53, 21, 0.1);
-    min-height: 400px;
-    break-inside: avoid;
-    page-break-inside: avoid;         
-    -webkit-column-break-inside: avoid;
-    margin-bottom: 60px;
-    width: 100%;
-}
+        @media (min-width: 768px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .gallery-grid {
+                column-count: 3;
+            }
+        }
+
+        .artwork {
+            position: relative;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(91, 53, 21, 0.1);
+            min-height: 400px;
+            break-inside: avoid;
+            page-break-inside: avoid;         
+            -webkit-column-break-inside: avoid;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+        
         .artwork:hover {
             transform: translateY(-10px) rotate(0.5deg);
             box-shadow: 0 20px 60px rgba(91, 53, 21, 0.15);
@@ -163,9 +163,10 @@
             border: none;
         }
 
-     .artwork-links {
-    display: none;
-}
+        .artwork-links {
+            display: none;
+        }
+        
         .art-link {
             color: #5B3515;
             text-decoration: none;
@@ -187,7 +188,6 @@
         .featured {
             grid-column: 1 / -1;
             max-width: 800px;
-            
             margin: 0 auto;
         }
 
@@ -245,78 +245,42 @@
             box-shadow: 0 10px 25px rgba(91, 53, 21, 0.2);
         }
 
-        /* Literature Section - Placeholder 
-        .literature {
-            padding: 80px 40px;
-            text-align: center;
-            background: rgba(91, 53, 21, 0.02);
-        }
-
-        .coming-soon {
-            font-size: 1.2rem;
-            color: #7d5a39;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .placeholder-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .placeholder-link {
-            color: #7d5a39;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 12px 25px;
-            border: 2px dashed rgba(91, 53, 21, 0.3);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            opacity: 0.6;
-        }
-
-        .placeholder-link:hover {
-            opacity: 1;
-            border-color: #5B3515;
-            color: #5B3515;
-        }
-*/
         /* Social Media Section */
         .social {
             padding: 60px 40px;
             text-align: center;
             background: rgba(91, 53, 21, 0.05);
         }
-/* Newsletter Section */
-.newsletter {
-    padding: 60px 40px;
-    text-align: center;
-    background: rgba(91, 53, 21, 0.02);
-}
 
-.newsletter-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 40px;
+            text-align: center;
+            background: rgba(91, 53, 21, 0.02);
+        }
 
-/* Style the Zoho form to match your site */
-.newsletter .quick_form_7_css {
-    background-color: rgba(245, 241, 232, 0.8) !important;
-    border: 1px solid rgba(91, 53, 21, 0.2) !important;
-    margin: 0 auto !important;
-}
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-.newsletter input[type="text"] {
-    background-color: #faf8f2 !important;
-    border-color: rgba(91, 53, 21, 0.3) !important;
-    color: #5B3515 !important;
-}
+        /* Style the Zoho form to match your site */
+        .newsletter .quick_form_7_css {
+            background-color: rgba(245, 241, 232, 0.8) !important;
+            border: 1px solid rgba(91, 53, 21, 0.2) !important;
+            margin: 0 auto !important;
+        }
 
-.newsletter input[type="button"] {
-    background-color: #5B3515 !important;
-}
+        .newsletter input[type="text"] {
+            background-color: #faf8f2 !important;
+            border-color: rgba(91, 53, 21, 0.3) !important;
+            color: #5B3515 !important;
+        }
+
+        .newsletter input[type="button"] {
+            background-color: #5B3515 !important;
+        }
+
         .social h3 {
             font-size: 1.5rem;
             color: #5B3515;
@@ -358,7 +322,7 @@
         }
 
         .commission h2 {
-            font-size:2.5rem ;
+            font-size: 2.5rem;
             color: #5B3515;
             font-weight: 300;
             margin-bottom: 30px;
@@ -405,7 +369,7 @@
             opacity: 0.8;
         }
 
-        /* Fixed Footer Styles */
+        /* Footer Styles */
         footer {
             text-align: center;
             padding: 40px;
@@ -483,24 +447,22 @@
         </div>
     </section>
 
-   
+    <article class="artwork featured fade-in">
+        <div class="artwork-header">
+            <div class="artwork-type">Featured Pre-Order</div>
+            <h2 class="artwork-title">Burden of the Light</h2>
+            <p class="artwork-description">New release: "Burden of the Light" trilogy now available for pre-order.</p>
+        </div>
+        
+        <div class="artwork-media">
+            <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=FFEDDC/linkcol=BE601E/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
+        </div>
+        
+        <div class="artwork-links">
+            <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Pre-Order & RSVP</a>
+        </div>
+    </article>
 
-   <article class="artwork featured fade-in">
-                <div class="artwork-header">
-                    <div class="artwork-type">Featured Pre-Order</div>
-                    <h2 class="artwork-title">Burden of the Light</h2>
-                    <p class="artwork-description">New release: "Burden of the Light" trilogy now available for pre-order.</p>
-                </div>
-                
-                <div class="artwork-media">
-                    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=FFEDDC/linkcol=BE601E/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
-                </div>
-                
-                <div class="artwork-links">
-                    <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Pre-Order & RSVP</a>
-                </div>
-            </article>
- 
     <!-- Sheet Music Section -->
     <section class="sheet-music fade-in">
         <h2 class="section-title">Sheet Music</h2>
@@ -513,28 +475,6 @@
             <a href="https://www.sheetmusicdirect.com/de-DE/Search.aspx?query=Gokul+Salvadi" class="sheet-link" target="_blank">Sheet Music Direct</a>
         </div>
     </section>
-
-    <!-- Literature Section -->
-    <!-- 
-    <section class="literature fade-in">
-        <h2 class="section-title">Literature</h2>
-        <p class="section-description">Cross-cultural works exploring identity, belonging, and the spaces between languages.</p>
-        
-        <div class="sheet-links">
-            <a href="#" class="sheet-link">Tamil Poetry Collection</a>
-            <a href="#" class="sheet-link">Digital Literary Magazine</a>
-        </div>
-    </section>
-    -->
-    
-    <!-- TO ACTIVATE LITERATURE SECTION:
-    1. Remove the comment tags above and below
-    2. Replace href="#" with your actual book and magazine URLs
-    3. Update titles if needed
-    4. Remove these instructions
-    -->
-
-  
 
     <!-- Commission Section -->
     <section class="commission">
@@ -556,143 +496,107 @@
         </div>
     </section>
 
-  
+    <!-- Newsletter Section -->
+    <section class="newsletter fade-in">
+        <div class="newsletter-content">
+            <h2 class="section-title">Stay Updated</h2>
+            <p class="section-description">Get notified about new releases and updates</p>
+            
+            <!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
+            <script type="text/javascript" src="https://zcsub-cmpzourl.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510','ZCFORMVIEW',false,'acc',false,'2')"></script>
+            <script type="text/javascript">
+                function runOnFormSubmit_sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510(th){
+                    /*Before submit, if you want to trigger your event, "include your code here"*/
+                };
+            </script>
 
-<!-- Newsletter Section -->
-<section class="newsletter fade-in">
-    <div class="newsletter-content">
-        <h2 class="section-title">Stay Updated</h2>
-        <p class="section-description">Get notified about new releases and updates</p>
-        
+            <style>.quick_form_7_css * { -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; overflow-wrap: break-word }@media only screen and (max-width: 600px) {.quick_form_7_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0px auto !important; padding: 0px !important } .SIGNUP_FLD { width: 90% !important; margin: 15px 5% !important; padding: 0px !important } .SIGNUP_FLD input { margin: 0 !important } }</style>
+            <!--Zoho Campaigns Web-Optin Form's Header Code Ends Here-->
 
-     <!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
+            <!--Zoho Campaigns Web-Optin Form Starts Here-->
+            <div id="sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510" data-type="signupform" style="opacity: 1;">
+                <div id="customForm">
+                    <div class="quick_form_7_css" style="background-color: rgb(245, 241, 232); width: 500px; z-index: 2; font-family: Arial; border: 1px solid rgb(206, 206, 206); overflow: hidden" name="SIGNUP_BODY">
+                        <div>
+                            <div style="font-size: 14px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: left; padding: 15px 15px 5px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe for updates</div>
+                            <div style="position:relative;">
+                                <div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="10%">
+                                                    <img class="successicon" src="https://zcsub-cmpzourl.maillist-manage.com/images/challangeiconenable.jpg" align="absmiddle">
+                                                </td>
+                                                <td>
+                                                    <span id="signupSuccessMsg" style="color: rgb(73, 140, 132); font-family: sans-serif; font-size: 14px;word-break:break-word">&nbsp;&nbsp;Thank you for Signing Up</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; text-align: center" action="https://zcsub-cmpzourl.maillist-manage.com/weboptin.zc" target="_zcSignup">
+                                <div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); font-size: 11px; margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none" id="errorMsgDiv">Please correct the marked field(s) below.</div>
+                                <div style="position: relative; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
+                                    <div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Email</div>
+                                    <input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+                                </div>
+                                <div style="position: relative; margin: 5px 0 20px 10px; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
+                                    <div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Name</div>
+                                    <input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="LASTNAME" id="EMBED_FORM_NAME_LABEL">
+                                </div>
+                                
+                                <!-- Privacy Policy Notice -->
+                                <div style="position: relative; margin: 10px; display: block; text-align: center;">
+                                    <p style="font-size: 10px; color: rgb(85, 85, 85); font-family: Arial; line-height: 1.4; margin: 0;">
+                                        By subscribing, you agree to our <a href="policy.html" target="_blank" style="color: rgb(91, 53, 21); text-decoration: underline;">Privacy Policy</a>
+                                    </p>
+                                </div>
+                                
+                                <div style="position: relative; width: 100px; height: 28px; margin: 0 0 15px 12px; display: inline-block" class="SIGNUP_FLD">
+                                    <input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; font-size: 14px; background-color: rgb(190, 96, 30); border-radius: 4px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
+                                </div>
+                                <input type="hidden" id="fieldBorder" value="">
+                                <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+                                <input type="hidden" id="emailReportId" name="emailReportId" value="">
+                                <input type="hidden" id="formType" name="formType" value="QuickForm">
+                                <input type="hidden" name="zx" id="cmpZuid" value="1357f02f9">
+                                <input type="hidden" name="zcvers" value="3.0">
+                                <input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+                                <input type="hidden" id="mode" name="mode" value="OptinCreateView">
+                                <input type="hidden" id="zcld" name="zcld" value="115212b852c31e73b">
+                                <input type="hidden" id="zctd" name="zctd" value="">
+                                <input type="hidden" id="document_domain" value="">
+                                <input type="hidden" id="zc_Url" value="zcsub-cmpzourl.maillist-manage.com">
+                                <input type="hidden" id="new_optin_response_in" value="0">
+                                <input type="hidden" id="duplicate_optin_response_in" value="0">
+                                <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+                                <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510">
+                                <input type="hidden" id="viewFrom" value="URL_ACTION">
+                                <span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+                                <span style="display: none" id="dt_FIRSTNAME">1,false,1,First Name,2</span>
+                                <span style="display: none" id="dt_LASTNAME">1,false,1,Last Name,2</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://zcsub-cmpzourl.maillist-manage.com/images/spacer.gif" id="refImage" onload="referenceSetter(this)" style="display:none;">
+            </div>
+            <input type="hidden" id="signupFormType" value="QuickForm_Horizontal">
+            <div id="zcOptinOverLay" oncontextmenu="return false" style="display:none;text-align: center; background-color: rgb(0, 0, 0); opacity: 0.5; z-index: 100; position: fixed; width: 100%; top: 0px; left: 0px; height: 988px;"></div>
+            <div id="zcOptinSuccessPopup" style="display:none;z-index: 9999;width: 800px; height: 40%;top: 84px;position: fixed; left: 26%;background-color: #FFFFFF;border-color: #E6E6E6; border-style: solid; border-width: 1px;  box-shadow: 0 1px 10px #424242;padding: 35px;">
+                <span style="position: absolute;top: -16px;right:-14px;z-index:99999;cursor: pointer;" id="closeSuccess">
+                    <img src="https://zcsub-cmpzourl.maillist-manage.com/images/videoclose.png">
+                </span>
+                <div id="zcOptinSuccessPanel"></div>
+            </div>
+            <!--Zoho Campaigns Web-Optin Form Ends Here-->
+        </div>
+    </section>
 
-<script type="text/javascript" src="https://zcsub-cmpzourl.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510','ZCFORMVIEW',false,'acc',false,'2')"></script>
-<script type="text/javascript">
-	function runOnFormSubmit_sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510(th){
-		/*Before submit, if you want to trigger your event, "include your code here"*/
-	};
-</script>
-
-<style>.quick_form_7_css * { -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; overflow-wrap: break-word }@media only screen and (max-width: 600px) {.quick_form_7_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0px auto !important; padding: 0px !important } .SIGNUP_FLD { width: 90% !important; margin: 15px 5% !important; padding: 0px !important } .SIGNUP_FLD input { margin: 0 !important } }</style>
-
-<!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
-
-<script type="text/javascript" src="https://zcsub-cmpzourl.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510','ZCFORMVIEW',false,'light',false,'0')"></script>
-<script type="text/javascript">
-	function runOnFormSubmit_sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510(th){
-		/*Before submit, if you want to trigger your event, "include your code here"*/
-	};
-</script>
-
-<style>.quick_form_7_css * { -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; overflow-wrap: break-word }@media only screen and (max-width: 600px) {.quick_form_7_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0px auto !important; padding: 0px !important } .SIGNUP_FLD { width: 90% !important; margin: 15px 5% !important; padding: 0px !important } .SIGNUP_FLD input { margin: 0 !important } }</style>
-
-<!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
-
-<script type="text/javascript" src="https://zcsub-cmpzourl.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510','ZCFORMVIEW',false,'light',false,'0')"></script>
-<script type="text/javascript">
-	function runOnFormSubmit_sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510(th){
-		/*Before submit, if you want to trigger your event, "include your code here"*/
-	};
-</script>
-
-<style>.quick_form_7_css * { -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; overflow-wrap: break-word }@media only screen and (max-width: 600px) {.quick_form_7_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0px auto !important; padding: 0px !important } .SIGNUP_FLD { width: 90% !important; margin: 15px 5% !important; padding: 0px !important } .SIGNUP_FLD input { margin: 0 !important } }</style>
-
-<!--Zoho Campaigns Web-Optin Form's Header Code Ends Here-->
-
-<!--Zoho Campaigns Web-Optin Form Starts Here-->
-
-<div id="sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510" data-type="signupform" style="opacity: 1;">
-	<div id="customForm">
-		<div class="quick_form_7_css" style="background-color: rgb(245, 241, 232); width: 500px; z-index: 2; font-family: Arial; border: 1px solid rgb(206, 206, 206); overflow: hidden" name="SIGNUP_BODY">
-			<div>
-				<div style="font-size: 14px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: left; padding: 15px 15px 5px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe for updates</div>
-				<div style="position:relative;">
-					<div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
-						<table width="100%" cellpadding="0" cellspacing="0" border="0">
-							<tbody>
-								<tr>
-									<td width="10%">
-										<img class="successicon" src="https://zcsub-cmpzourl.maillist-manage.com/images/challangeiconenable.jpg" align="absmiddle">
-									</td>
-									<td>
-										<span id="signupSuccessMsg" style="color: rgb(73, 140, 132); font-family: sans-serif; font-size: 14px;word-break:break-word">&nbsp;&nbsp;Thank you for Signing Up</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; text-align: center" action="https://zcsub-cmpzourl.maillist-manage.com/weboptin.zc" target="_zcSignup">
-					<div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); font-size: 11px; margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none" id="errorMsgDiv">Please correct the marked field(s) below.</div>
-					<div style="position: relative; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
-						<div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Email</div>
-						<input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
-					</div>
-					<div style="position: relative; margin: 5px 0 20px 10px; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
-						<div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Name</div>
-						<input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="LASTNAME" id="EMBED_FORM_NAME_LABEL">
-					</div>
-					
-					<!-- Privacy Policy Consent  -->
-					<!-- Replace the checkbox div with this simple text -->
-<!-- Privacy Policy Notice -->
-<div style="position: relative; margin: 10px; display: block; text-align: center;">
-    <p style="font-size: 10px; color: rgb(85, 85, 85); font-family: Arial; line-height: 1.4; margin: 0;">
-        By subscribing, you agree to our <a href="policy.html" target="_blank" style="color: rgb(91, 53, 21); text-decoration: underline;">Privacy Policy</a>
-    </p>
-</div>
-					
-					<div style="position: relative; width: 100px; height: 28px; margin: 0 0 15px 12px; display: inline-block" class="SIGNUP_FLD">
-						<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; font-size: 14px; background-color: rgb(190, 96, 30); border-radius: 4px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
-					</div>
-					<input type="hidden" id="fieldBorder" value="">
-					<input type="hidden" id="submitType" name="submitType" value="optinCustomView">
-					<input type="hidden" id="emailReportId" name="emailReportId" value="">
-					<input type="hidden" id="formType" name="formType" value="QuickForm">
-					<input type="hidden" name="zx" id="cmpZuid" value="1357f02f9">
-					<input type="hidden" name="zcvers" value="3.0">
-					<input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
-					<input type="hidden" id="mode" name="mode" value="OptinCreateView">
-					<input type="hidden" id="zcld" name="zcld" value="115212b852c31e73b">
-					<input type="hidden" id="zctd" name="zctd" value="">
-					<input type="hidden" id="document_domain" value="">
-					<input type="hidden" id="zc_Url" value="zcsub-cmpzourl.maillist-manage.com">
-					<input type="hidden" id="new_optin_response_in" value="0">
-					<input type="hidden" id="duplicate_optin_response_in" value="0">
-					<input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
-					<input type="hidden" id="zc_formIx" name="zc_formIx" value="3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510">
-					<input type="hidden" id="viewFrom" value="URL_ACTION">
-					<span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
-					<span style="display: none" id="dt_FIRSTNAME">1,false,1,First Name,2</span>
-					<span style="display: none" id="dt_LASTNAME">1,false,1,Last Name,2</span>
-
-				</form>
-			</div>
-		</div>
-	</div>
-	<img src="https://zcsub-cmpzourl.maillist-manage.com/images/spacer.gif" id="refImage" onload="referenceSetter(this)" style="display:none;">
-</div>
-<input type="hidden" id="signupFormType" value="QuickForm_Horizontal">
-<div id="zcOptinOverLay" oncontextmenu="return false" style="display:none;text-align: center; background-color: rgb(0, 0, 0); opacity: 0.5; z-index: 100; position: fixed; width: 100%; top: 0px; left: 0px; height: 988px;"></div>
-<div id="zcOptinSuccessPopup" style="display:none;z-index: 9999;width: 800px; height: 40%;top: 84px;position: fixed; left: 26%;background-color: #FFFFFF;border-color: #E6E6E6; border-style: solid; border-width: 1px;  box-shadow: 0 1px 10px #424242;padding: 35px;">
-	<span style="position: absolute;top: -16px;right:-14px;z-index:99999;cursor: pointer;" id="closeSuccess">
-		<img src="https://zcsub-cmpzourl.maillist-manage.com/images/videoclose.png">
-	</span>
-	<div id="zcOptinSuccessPanel"></div>
-</div>
-
-<!--Zoho Campaigns Web-Optin Form Ends Here-->
-    </div>
-</section>
-
-<!-- Social Media Section -->
-<section class="social fade-in">
-    <!-- your existing social links -->
-</section>
-<!-- Social Media Section -->
+    <!-- Social Media Section -->
     <section class="social fade-in">
-         <h2 class="section-title">Connect</h2>
+        <h2 class="section-title">Connect</h2>
         <div class="social-links">
             <a href="https://x.com/gsalvadi" class="social-link" target="_blank">Twitter</a>
             <a href="https://www.youtube.com/@gokulsalvadi" class="social-link" target="_blank">YouTube</a>
@@ -725,8 +629,6 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
-        // No form submission handling needed anymore - mailto handles everything
 
         // Add subtle parallax effect to hero
         window.addEventListener('scroll', () => {
