@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off the Record Vol. I - Voices Lost Among Algorithmic Machines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #5B3515;
+            background: linear-gradient(135deg, #F5F1E8 0%, #f0ebe0 50%, #F5F1E8 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 0;
+            background: rgba(91, 53, 21, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(91, 53, 21, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .album-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: #5B3515;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(91, 53, 21, 0.1);
+        }
+
+        .album-subtitle {
+            font-size: 1.2rem;
+            color: #7d5a39;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* Archive Note Box */
+        .archive-note {
+            background: rgba(245, 241, 232, 0.6);
+            border: 1px solid rgba(91, 53, 21, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            color: #5B3515;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .archive-note::before {
+            content: "A Note from the Archives";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #F5F1E8;
+            color: #5B3515;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .archive-note p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #7d5a39;
+        }
+
+        /* Track Boxes */
+        .tracks-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #5B3515;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .track {
+            background: rgba(245, 241, 232, 0.4);
+            border: 1px solid rgba(91, 53, 21, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .track:hover {
+            transform: translateY(-3px);
+            border-color: rgba(91, 53, 21, 0.3);
+            box-shadow: 0 10px 30px rgba(91, 53, 21, 0.1);
+        }
+
+        .track-name {
+            font-size: 1.8rem;
+            color: #5B3515;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .track-tagline {
+            font-style: italic;
+            color: #7d5a39;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .track-description {
+            color: #7d5a39;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .philosophy-section p {
+            color: #7d5a39;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Curation Box */
+        .curation-box {
+            background: rgba(245, 241, 232, 0.3);
+            border-left: 4px solid rgba(91, 53, 21, 0.4);
+            border-radius: 10px;
+            padding: 35px;
+            margin: 40px 0;
+            color: #7d5a39;
+        }
+
+        .curation-title {
+            font-size: 1.5rem;
+            color: #5B3515;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .curation-box p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Bandcamp Call-to-Action */
+        .bandcamp-cta {
+            background: rgba(245, 241, 232, 0.7);
+            border: 2px solid rgba(91, 53, 21, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .bandcamp-title {
+            font-size: 1.8rem;
+            color: #5B3515;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .bandcamp-description {
+            color: #7d5a39;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .gratitude {
+            font-style: italic;
+            color: #7d5a39;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Technical Notes */
+        .technical-notes {
+            background: rgba(245, 241, 232, 0.3);
+            border: 1px solid rgba(91, 53, 21, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #7d5a39;
+            line-height: 1.8;
+        }
+
+        .technical-title {
+            color: #5B3515;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+        }
+
+        .technical-notes p {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(91, 53, 21, 0.1);
+            color: #7d5a39;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .archive-note, .philosophy-box, .curation-box, .bandcamp-cta {
+                padding: 25px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Subtle animations */
+        .track, .archive-note, .philosophy-box, .curation-box, .bandcamp-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .track:nth-child(1) { animation-delay: 0.1s; }
+        .track:nth-child(2) { animation-delay: 0.2s; }
+        .track:nth-child(3) { animation-delay: 0.3s; }
+        .archive-note { animation-delay: 0.1s; }
+        .philosophy-box { animation-delay: 0.4s; }
+        .curation-box { animation-delay: 0.5s; }
+        .bandcamp-cta { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="album-title">Off the Record Vol. I</h1>
+            <p class="album-subtitle">Voices Lost Among Algorithmic Machines</p>
+        </div>
+
+        <!-- Archive Note -->
+        <div class="archive-note">
+            <p>In the quiet corners of digital storage, music waits. Not the kind of music designed for playlists or engineered for viral moments, but the honest expressions that emerge when creativity flows without constraint. These three tracks—Jasax, Raguitar, and It's Raining—were born in different moments across the past decade, each one a departure from whatever was "officially" happening at the time.</p>
+            <p>When I rediscovered them buried in my archives, I realized something profound: these weren't just forgotten files. They were voices lost among algorithmic machines, casualties of a system that rewards the predictable over the personal, the trending over the timeless.</p>
+        </div>
+
+        <!-- Tracks Section -->
+        <section class="tracks-section">
+            <h2 class="section-title">The Tracks</h2>
+
+            <div class="track">
+                <h3 class="track-name">JASAX</h3>
+                <p class="track-tagline">"Just lay back... It's Jazzy"</p>
+                <p class="track-description">Born from late-night sessions when the studio felt more like a living room than a workspace. The synthesizers breathe with the unhurried confidence of jazz, but filtered through electronic sensibilities that resist easy categorization. It's music for the space between wake and sleep, between structure and improvisation.</p>
+            </div>
+
+            <div class="track">
+                <h3 class="track-name">RAGUITAR</h3>
+                <p class="track-tagline">"Guitars contemplate but they have a rhythm"</p>
+                <p class="track-description">Six strings become philosophers here, each note a quiet thought drifting through measured time. The contemplation isn't static—there's a pulse underneath, a gentle insistence that even reflection needs momentum. It's the sound of thinking while walking, of meditation in motion.</p>
+            </div>
+
+            <div class="track">
+                <h3 class="track-name">IT'S RAINING</h3>
+                <p class="track-tagline">"Where synth currents meet the sky, patterns emerge and dissolve like memories"</p>
+                <p class="track-description">Continuous arpeggios cascade like digital precipitation, creating patterns that form and dissolve in endless cycles. Each note falls into the next with the inevitability of weather, the beauty of systems finding their own rhythm. It's electronic music that breathes with organic timing.</p>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section class="philosophy-section">
+            <h2 class="section-title">Why "Off the Record"</h2>
+            <p>These tracks exist in defiance of algorithmic logic. They're too nuanced for recommendation engines, too personal for mass market appeal, too honest for the optimization game. They represent what happens when music is created for its own sake, without consideration for how it might perform in the attention economy.</p>
+            <p>"Off the Record" is both a statement and a sanctuary—a recognition that some art needs to exist outside the systems designed to measure, categorize, and monetize creativity. It's music for humans, discovered by humans, in spaces where algorithms hold no power.</p>
+        </section>
+
+        <!-- Curation -->
+        <div class="curation-box">
+            <h3 class="curation-title">The Curation</h3>
+            <p>Each track has been given new life through careful remastering and fresh visual identity. Not because they needed fixing, but because they deserved the care that comes with recognition. The album art speaks to the atmospheric nature of each piece while maintaining visual cohesion across the collection.</p>
+            <p>This isn't nostalgia—it's archaeology. Digging through digital sediment to uncover expressions that were always meant to be heard but never found their proper audience in the algorithmic landscape where they first appeared.</p>
+        </div>
+
+        <!-- Bandcamp CTA -->
+        <div class="bandcamp-cta">
+            <h3 class="bandcamp-title">Bandcamp: Where Music Breathes</h3>
+            <p class="bandcamp-description">This release lives exclusively on Bandcamp because some music needs space to breathe. Away from the constant churn of streaming algorithms, away from the pressure to perform in metrics and data points. Here, in the direct connection between artist and listener, these tracks can exist on their own terms.</p>
+            <p class="gratitude">Thank you for seeking them out. Thank you for listening. Thank you for proving that in a world increasingly run by machines, human curiosity still finds a way.</p>
+        </div>
+
+        <!-- Technical Notes -->
+        <div class="technical-notes">
+            <h4 class="technical-title">Technical Notes</h4>
+            <p>Jasax: Originally recorded [year], remastered 2025</p>
+            <p>Raguitar: Originally recorded [year], remastered 2025</p>
+            <p>It's Raining: Originally recorded [year], remastered 2025</p>
+            <p>Mastering: Subtle enhancement to preserve original character</p>
+            <p>Album Art: Custom designed for this collection</p>
+            <p>Format: High-quality digital download exclusive to Bandcamp</p>
+            <br>
+            <p>Off the Record Vol. I represents the first in a potential series of rescued recordings—voices retrieved from the digital archives and given the platform they always deserved.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 | Bandcamp Exclusive</p>
+        </div>
+    </div>
+</body>
+</html>
