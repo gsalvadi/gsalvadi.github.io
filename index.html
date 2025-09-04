@@ -124,15 +124,6 @@
             text-align: center;
         }
 
-        .artwork-type {
-            font-size: 0.85rem;
-            color: #7d5a39;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-
         .artwork-title {
             font-size: 2rem;
             color: #5B3515;
@@ -205,21 +196,12 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #7d5a39;
             font-weight: 300;
             margin-bottom: 40px;
             letter-spacing: -0.5px;
             line-height: 1.3;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: #7d5a39;
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .sheet-links {
@@ -268,48 +250,80 @@
             margin: 0 auto;
         }
 
-        /* Style the Zoho form to match your site */
+        /* Style the Zoho form to match refined aesthetics */
         .newsletter .quick_form_7_css {
-            background-color: #F5F1E8 !important;
-            border: 1px solid rgba(91, 53, 21, 0.2) !important;
+            background-color: rgba(255, 255, 255, 0.4) !important;
+            border: 1px solid rgba(91, 53, 21, 0.15) !important;
+            border-radius: 6px !important;
             margin: 0 auto !important;
             font-family: Georgia, serif !important;
+            box-shadow: none !important;
         }
 
         .newsletter #SIGNUP_HEADING {
-            background-color: #F5F1E8 !important;
-            color: #5B3515 !important;
+            background-color: transparent !important;
+            color: #7d5a39 !important;
             font-family: Georgia, serif !important;
+            font-weight: 300 !important;
+            font-size: 16px !important;
+            text-transform: none !important;
+            letter-spacing: 0.3px !important;
         }
 
         .newsletter input[type="text"] {
-            background-color: #FFFFFF !important;
-            border-color: rgba(91, 53, 21, 0.3) !important;
+            background-color: rgba(255, 255, 255, 0.6) !important;
+            border: 1px solid rgba(91, 53, 21, 0.2) !important;
+            border-radius: 4px !important;
             color: #5B3515 !important;
             font-family: Georgia, serif !important;
+            font-size: 12px !important;
+            padding: 8px 12px !important;
+        }
+
+        .newsletter input[type="text"]:focus {
+            border-color: rgba(91, 53, 21, 0.4) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(91, 53, 21, 0.1) !important;
         }
 
         .newsletter input[type="button"] {
-            background-color: #5B3515 !important;
+            background-color: rgba(91, 53, 21, 0.08) !important;
+            color: #5B3515 !important;
+            border: 1px solid rgba(91, 53, 21, 0.15) !important;
+            border-radius: 4px !important;
             font-family: Georgia, serif !important;
-            transition: all 0.3s ease !important;
+            font-size: 12px !important;
+            text-transform: none !important;
+            letter-spacing: 0.2px !important;
+            transition: all 0.2s ease !important;
+            font-weight: normal !important;
+            padding: 8px 16px !important;
         }
 
         .newsletter input[type="button"]:hover {
-            background-color: #7d5a39 !important;
-            transform: translateY(-2px) !important;
+            background-color: rgba(91, 53, 21, 0.12) !important;
+            border-color: rgba(91, 53, 21, 0.25) !important;
+            transform: translateY(-1px) !important;
+            cursor: pointer !important;
         }
 
         .newsletter .SIGNUP_FLD div {
-            color: #5B3515 !important;
+            color: #7d5a39 !important;
             font-family: Georgia, serif !important;
+            font-size: 11px !important;
+            font-weight: normal !important;
         }
 
-        .social h3 {
-            font-size: 1.5rem;
-            color: #5B3515;
-            font-weight: 300;
-            margin-bottom: 30px;
+        /* Privacy policy link styling */
+        .newsletter a {
+            color: #5B3515 !important;
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(91, 53, 21, 0.3) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .newsletter a:hover {
+            border-bottom-color: #5B3515 !important;
         }
 
         .social-links {
@@ -346,7 +360,7 @@
         }
 
         .commission h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #7d5a39;
             font-weight: 300;
             margin-bottom: 40px;
@@ -364,28 +378,6 @@
         /* Contact Mailto */
         .contact-mailto {
             text-align: center;
-        }
-
-        .mailto-button {
-            display: inline-block;
-            background: rgba(91, 53, 21, 0.08);
-            color: #5B3515;
-            padding: 14px 32px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-family: 'Georgia', serif;
-            transition: all 0.2s ease;
-            text-transform: none;
-            letter-spacing: 0.3px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(91, 53, 21, 0.15);
-        }
-
-        .mailto-button:hover {
-            background: rgba(91, 53, 21, 0.12);
-            transform: translateY(-1px);
-            border-color: rgba(91, 53, 21, 0.25);
         }
 
         .contact-note {
@@ -443,20 +435,11 @@
                 padding: 60px 20px;
             }
 
-            .commission-form {
-                padding: 30px 20px;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
             .hero {
                 padding: 0 20px;
             }
 
-            .sheet-links, .placeholder-links, .social-links {
+            .sheet-links, .social-links {
                 gap: 20px;
             }
         }
@@ -473,30 +456,25 @@
         </div>
     </section>
 
+    <!-- Featured Work - NO "Featured" label
     <article class="artwork featured fade-in">
         <div class="artwork-header">
-            <div class="artwork-type">Featured</div>
-<h2 class="artwork-title">Burden of the Light</h2>
-<p class="artwork-description">A trilogy in three movements. The journey has begun.</p>
+            <h2 class="artwork-title">Burden of the Light</h2>
+            <p class="artwork-description">A trilogy in three movements. The journey has begun.</p>
         </div>
         
         <div class="artwork-media">
-           <!--  <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=FFEDDC/linkcol=BE601E/tracklist=false/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
-            -->
-               <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
-      </div>
+            <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
+        </div>
         
         <div class="artwork-links">
             <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Pre-Order & RSVP</a>
         </div>
     </article>
-
-    <!-- Sheet Music Section -->
+ -->
+    <!-- Sheet Music Section - NO description -->
     <section class="sheet-music fade-in">
         <h2 class="section-title">Sheet Music</h2>
-        <p class="section-description">
-            Professional scores available for performance and study. Editions with detailed performance notes where needed.
-        </p>
         
         <div class="sheet-links">
             <a href="https://www.sheetmusicplus.com/en/category/publishers/g/gokul-salvadi/" class="sheet-link" target="_blank">Sheet Music Plus</a>
@@ -513,22 +491,17 @@
             </p>
 
             <div class="contact-mailto">
-                <!--  <a href="mailto:music@beingokul.com?subject=Commission%20Inquiry" class="mailto-button"> 
-                  
-                </a> -->
-                
                 <p class="contact-note">
-                      Send eMail to : music(at)beingokul(dot)com
+                    Send eMail to : music(at)beingokul(dot)com
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
+    <!-- Newsletter Section - simplified -->
     <section class="newsletter fade-in">
         <div class="newsletter-content">
-            <h2 class="section-title">Stay Updated</h2>
-            <p class="section-description">Get notified about new releases and updates</p>
+            <h2 class="section-title">Newsletter</h2>
             
             <!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
             <script type="text/javascript" src="https://zcsub-cmpzourl.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510','ZCFORMVIEW',false,'acc',false,'2')"></script>
@@ -546,7 +519,7 @@
                 <div id="customForm">
                     <div class="quick_form_7_css" style="background-color: rgb(245, 241, 232); width: 500px; z-index: 2; font-family: Arial; border: 1px solid rgb(206, 206, 206); overflow: hidden" name="SIGNUP_BODY">
                         <div>
-                            <div style="font-size: 14px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: left; padding: 15px 15px 5px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe for updates</div>
+                            <div style="font-size: 14px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: left; padding: 15px 15px 5px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe</div>
                             <div style="position:relative;">
                                 <div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -621,24 +594,19 @@
             
             <!--Zoho Campaigns Web-Optin Form Ends Here-->
         </div>
-        
-            
     </section>
     
-    <!-- Social Media Section -->
+    <!-- Social Media Section - NO heading/symbol -->
     <section class="social fade-in">
-        <h2 class="section-title">✦</h2>
         <div class="social-links">
             <a href="/musings/" class="social-link">Musings</a>
-            <a href="https://www.youtube.com/@gokulsalvadi" class="social-link" target="_blank">YouTube</a>
-            <a href="https://www.instagram.com/gsalvadi/" class="social-link" target="_blank">Instagram</a>
             <a href="https://gsalvadi.bandcamp.com/" class="social-link" target="_blank">Bandcamp</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-          <p>This site does not use cookies. Only information collected are what you voluntarily provide through the newsletter signup. <a href="policy.html">Privacy Policy</a></p>
+          <p><a href="policy.html">Privacy Policy</a></p>
           <br>
          <p>&copy; 2025 Gokul Salvadi. All rights reserved.</p>
     </footer>
