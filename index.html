@@ -1,4 +1,469 @@
-<!-- Hero Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokul Salvadi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.4;
+            color: #5B3515;
+            background: #F5F1E8;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #F5F1E8 0%, #f0ebe0 50%, #F5F1E8 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='musical' patternUnits='userSpaceOnUse' width='100' height='100'%3E%3Cpath d='M20,20 Q40,10 60,20 T100,20' stroke='%235B3515' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23musical)'/%3E%3C/svg%3E") repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            letter-spacing: -3px;
+            margin-bottom: 40px;
+            color: #5B3515;
+            text-shadow: 2px 2px 4px rgba(91, 53, 21, 0.1);
+        }
+
+        .availability {
+            font-size: 1rem;
+            color: #7d5a39;
+            padding: 12px 32px;
+            border: 1px solid rgba(125, 90, 57, 0.3);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .availability:hover {
+            background: rgba(255, 255, 255, 0.6);
+            color: #5B3515;
+            border-color: rgba(91, 53, 21, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Gallery Section - Masonry Layout */
+        .gallery-grid {
+            column-count: 1;
+            column-gap: 60px;
+            padding: 0 40px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .gallery-grid {
+                column-count: 3;
+            }
+        }
+
+        .artwork {
+            position: relative;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(91, 53, 21, 0.1);
+            min-height: 400px;
+            break-inside: avoid;
+            page-break-inside: avoid;         
+            -webkit-column-break-inside: avoid;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+        
+        .artwork:hover {
+            transform: translateY(-10px) rotate(0.5deg);
+            box-shadow: 0 20px 60px rgba(91, 53, 21, 0.15);
+        }
+
+        .artwork-header {
+            padding: 40px 40px 20px;
+            text-align: center;
+        }
+
+        .artwork-type {
+            font-size: 0.85rem;
+            color: #7d5a39;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .artwork-title {
+            font-size: 2rem;
+            color: #5B3515;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .artwork-description {
+            font-size: 1rem;
+            color: #7d5a39;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .artwork-media {
+            position: relative;
+            margin: 0 20px 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #faf8f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .artwork-media iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .artwork-links {
+            display: none;
+        }
+        
+        .art-link {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 80px 20px;
+            border: 1px solid rgba(91, 53, 21, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: rgba(245, 241, 232, 0.5);
+        }
+
+        .art-link:hover {
+            background: #5B3515;
+            color: #F5F1E8;
+            transform: translateY(-2px);
+        }
+
+        /* Featured Work */
+        .featured {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .featured .artwork-title {
+            font-size: 2.5rem;
+        }
+
+        /* Sheet Music Section */
+        .sheet-music {
+            background: transparent;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #7d5a39;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #7d5a39;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sheet-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sheet-link {
+            display: inline-block;
+            background: rgba(91, 53, 21, 0.08);
+            color: #5B3515;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            text-transform: none;
+            letter-spacing: 0.2px;
+            border: 1px solid rgba(91, 53, 21, 0.15);
+        }
+
+        .sheet-link:hover {
+            background: rgba(91, 53, 21, 0.12);
+            transform: translateY(-1px);
+            border-color: rgba(91, 53, 21, 0.25);
+        }
+
+        /* Social Media Section */
+        .social {
+            padding: 60px 40px;
+            text-align: center;
+            background: rgba(91, 53, 21, 0.05);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 40px;
+            text-align: center;
+            background: rgba(91, 53, 21, 0.02);
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Style the Zoho form to match your site */
+        .newsletter .quick_form_7_css {
+            background-color: #F5F1E8 !important;
+            border: 1px solid rgba(91, 53, 21, 0.2) !important;
+            margin: 0 auto !important;
+            font-family: Georgia, serif !important;
+        }
+
+        .newsletter #SIGNUP_HEADING {
+            background-color: #F5F1E8 !important;
+            color: #5B3515 !important;
+            font-family: Georgia, serif !important;
+        }
+
+        .newsletter input[type="text"] {
+            background-color: #FFFFFF !important;
+            border-color: rgba(91, 53, 21, 0.3) !important;
+            color: #5B3515 !important;
+            font-family: Georgia, serif !important;
+        }
+
+        .newsletter input[type="button"] {
+            background-color: #5B3515 !important;
+            font-family: Georgia, serif !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .newsletter input[type="button"]:hover {
+            background-color: #7d5a39 !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .newsletter .SIGNUP_FLD div {
+            color: #5B3515 !important;
+            font-family: Georgia, serif !important;
+        }
+
+        .social h3 {
+            font-size: 1.5rem;
+            color: #5B3515;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: #7d5a39;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            text-transform: none;
+            letter-spacing: 0.3px;
+        }
+
+        .social-link:hover {
+            color: #5B3515;
+            transform: translateY(-1px);
+        }
+
+        /* Commission Section */
+        .commission {
+            background: linear-gradient(135deg, rgba(91, 53, 21, 0.05) 0%, rgba(91, 53, 21, 0.02) 100%);
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .commission-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .commission h2 {
+            font-size: 2rem;
+            color: #7d5a39;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .commission-text {
+            font-size: 1.2rem;
+            color: #7d5a39;
+            margin-bottom: 50px;
+            line-height: 1.7;
+        }
+
+        /* Contact Mailto */
+        .contact-mailto {
+            text-align: center;
+        }
+
+        .mailto-button {
+            display: inline-block;
+            background: rgba(91, 53, 21, 0.08);
+            color: #5B3515;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: all 0.2s ease;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(91, 53, 21, 0.15);
+        }
+
+        .mailto-button:hover {
+            background: rgba(91, 53, 21, 0.12);
+            transform: translateY(-1px);
+            border-color: rgba(91, 53, 21, 0.25);
+        }
+
+        .contact-note {
+            font-size: 0.95rem;
+            color: #7d5a39;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #7d5a39;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(91, 53, 21, 0.1);
+            background: rgba(91, 53, 21, 0.02);
+        }
+
+        footer a {
+            color: #5B3515;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .artwork-header, .artwork-links {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .commission, .sheet-music, .literature, .social {
+                padding: 60px 20px;
+            }
+
+            .commission-form {
+                padding: 30px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 0 20px;
+            }
+
+            .sheet-links, .placeholder-links, .social-links {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Gokul Salvadi</h1>
@@ -11,8 +476,8 @@
     <article class="artwork featured fade-in">
         <div class="artwork-header">
             <div class="artwork-type">Featured</div>
-            <h2 class="artwork-title">Burden of the Light</h2>
-            <p class="artwork-description">A trilogy in three movements. The journey has begun.</p>
+<h2 class="artwork-title">Burden of the Light</h2>
+<p class="artwork-description">A trilogy in three movements. The journey has begun.</p>
         </div>
         
         <div class="artwork-media">
@@ -156,6 +621,8 @@
             
             <!--Zoho Campaigns Web-Optin Form Ends Here-->
         </div>
+        
+            
     </section>
     
     <!-- Social Media Section -->
@@ -230,224 +697,6 @@
             });
         });
     </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typography Refinements</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background: #F5F1E8;
-            color: #5B3515;
-            padding: 40px;
-            line-height: 1.6;
-        }
-
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-        }
-
-        .column h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-            color: #7d5a39;
-        }
-
-        /* CURRENT STYLES */
-        .current-buttons .availability {
-            font-size: 1.1rem;
-            color: #5B3515;
-            padding: 15px 30px;
-            border: 2px solid #5B3515;
-            border-radius: 50px;
-            background: rgba(245, 241, 232, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: normal;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .current-buttons .availability:hover {
-            background: #5B3515;
-            color: #F5F1E8;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(91, 53, 21, 0.2);
-        }
-
-        .current-buttons .sheet-link {
-            display: inline-block;
-            background: #5B3515;
-            color: #F5F1E8;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 10px;
-        }
-
-        .current-buttons .sheet-link:hover {
-            background: #7d5a39;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(91, 53, 21, 0.2);
-        }
-
-        /* REFINED STYLES */
-        .refined-buttons .availability {
-            font-size: 1rem;
-            color: #7d5a39;
-            padding: 12px 32px;
-            border: 1px solid rgba(125, 90, 57, 0.3);
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.4);
-            text-transform: none;
-            letter-spacing: 0.3px;
-            font-weight: normal;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .refined-buttons .availability:hover {
-            background: rgba(255, 255, 255, 0.6);
-            color: #5B3515;
-            border-color: rgba(91, 53, 21, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .refined-buttons .sheet-link {
-            display: inline-block;
-            background: rgba(91, 53, 21, 0.08);
-            color: #5B3515;
-            padding: 10px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            text-transform: none;
-            letter-spacing: 0.2px;
-            margin: 8px;
-            border: 1px solid rgba(91, 53, 21, 0.15);
-        }
-
-        .refined-buttons .sheet-link:hover {
-            background: rgba(91, 53, 21, 0.12);
-            transform: translateY(-1px);
-            border-color: rgba(91, 53, 21, 0.25);
-        }
-
-        .refined-buttons .social-link {
-            color: #7d5a39;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            text-transform: none;
-            letter-spacing: 0.3px;
-            margin: 0 20px;
-        }
-
-        .refined-buttons .social-link:hover {
-            color: #5B3515;
-            transform: translateY(-1px);
-        }
-
-        /* SECTION TITLES */
-        .current-titles h2 {
-            font-size: 2.5rem;
-            color: #5B3515;
-            font-weight: 300;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
-        }
-
-        .refined-titles h2 {
-            font-size: 2rem;
-            color: #7d5a39;
-            font-weight: 300;
-            margin-bottom: 40px;
-            letter-spacing: -0.5px;
-            line-height: 1.3;
-        }
-
-        .note {
-            background: rgba(125, 90, 57, 0.08);
-            padding: 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #7d5a39;
-            font-style: italic;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-    <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 40px; color: #5B3515;">Typography & Button Refinements</h1>
-
-    <div class="comparison">
-        <div class="column current-buttons">
-            <h3>Current: Bold & Attention-Grabbing</h3>
-            <div class="availability">Contact for Commissions & Collaborations</div>
-            <br>
-            <a href="#" class="sheet-link">SHEET MUSIC PLUS</a>
-            <a href="#" class="sheet-link">SHEET MUSIC DIRECT</a>
-        </div>
-        
-        <div class="column refined-buttons">
-            <h3>Refined: Subtle & Confident</h3>
-            <div class="availability">Contact for commissions & collaborations</div>
-            <br>
-            <a href="#" class="sheet-link">Sheet Music Plus</a>
-            <a href="#" class="sheet-link">Sheet Music Direct</a>
-        </div>
-    </div>
-
-    <div class="comparison">
-        <div class="column current-titles">
-            <h3>Current Section Titles</h3>
-            <h2>Sheet Music</h2>
-            <h2>Contact</h2>
-        </div>
-        
-        <div class="column refined-titles">
-            <h3>Refined Section Titles</h3>
-            <h2>Sheet Music</h2>
-            <h2>Contact</h2>
-        </div>
-    </div>
-
-    <div class="comparison">
-        <div class="column current-buttons">
-            <h3>Current Social Links</h3>
-            <a href="#" style="color: #5B3515; text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin: 0 20px;">MUSINGS</a>
-            <a href="#" style="color: #5B3515; text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin: 0 20px;">YOUTUBE</a>
-        </div>
-        
-        <div class="column refined-buttons">
-            <h3>Refined Social Links</h3>
-            <a href="#" class="social-link">Musings</a>
-            <a href="#" class="social-link">YouTube</a>
-        </div>
-    </div>
-
-    <div class="note">
-        <strong>Philosophy:</strong> Move from "demanding attention" to "quietly confident." Remove uppercase shouting, soften contrast, reduce dramatic hover effects. Let the content speak rather than the styling. More literary, less digital.
-    </div>
 </body>
 </html>
 </body>
