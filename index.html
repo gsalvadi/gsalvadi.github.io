@@ -400,18 +400,11 @@
         </div>
     </section>
 
-    <!-- Featured Content Section - Dynamic -->
-    <section class="featured-content fade-in">
-        <h2 class="section-title">Latest</h2>
-        <div class="featured-item" id="featuredContent">
-            <!-- Content will be loaded automatically from musings -->
-            <div class="featured-type">Loading...</div>
-            <h3 class="featured-title">
-                <a href="/musings/">Latest from musings</a>
-            </h3>
-            <p class="featured-excerpt">Fetching latest content...</p>
-        </div>
-    </section>
+<div class="featured-type">Recent</div> <!-- Change to: Note, Release, Update, etc. -->
+<h3 class="featured-title">
+    <a href="/musings/distribution-odyssey.html">Your New Title</a> <!-- Change link & title -->
+</h3>
+<p class="featured-excerpt">The Odyssey of One Classical Piece in 2025</p> <!-- Change excerpt -->
 
     <!-- Sheet Music Section -->
     <section class="sheet-music fade-in">
@@ -594,66 +587,6 @@
                 }
             });
         });
-
-        // Automatic featured content loading
-        async function loadLatestContent() {
-            try {
-                const response = await fetch('/musings/');
-                const html = await response.text();
-                
-                // Create a temporary DOM parser
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                // Find all post entries
-                const posts = doc.querySelectorAll('.post-entry');
-                
-                if (posts.length === 0) {
-                    return; // Keep default content if no posts found
-                }
-                
-                // Priority: Latest release first, then latest note
-                let featuredPost = null;
-                let latestRelease = null;
-                let latestNote = null;
-                
-                posts.forEach(post => {
-                    if (post.classList.contains('release') && !latestRelease) {
-                        latestRelease = post;
-                    } else if (post.classList.contains('note') && !latestNote) {
-                        latestNote = post;
-                    }
-                });
-                
-                // Choose what to feature (releases get priority)
-                featuredPost = latestRelease || latestNote;
-                
-                if (featuredPost) {
-                    const title = featuredPost.querySelector('.post-title').textContent.trim();
-                    const excerpt = featuredPost.querySelector('.post-excerpt').textContent.trim();
-                    const link = featuredPost.querySelector('.post-title').getAttribute('href');
-                    const type = featuredPost.querySelector('.post-type').textContent.trim();
-                    
-                    // Update the featured content
-                    const featuredContainer = document.getElementById('featuredContent');
-                    featuredContainer.innerHTML = `
-                        <div class="featured-type">${type}</div>
-                        <h3 class="featured-title">
-                            <a href="/musings/${link}">${title}</a>
-                        </h3>
-                        <p class="featured-excerpt">${excerpt}</p>
-                    `;
-                }
-            } catch (error) {
-                console.log('Could not load latest content, using fallback');
-                // Keep the loading content as fallback
-            }
-        }
-        
-        // Load content when page loads
-        document.addEventListener('DOMContentLoaded', loadLatestContent);
     </script>
-</body>
-</html>
 </body>
 </html>
