@@ -80,112 +80,63 @@
             transform: translateY(-1px);
         }
 
-        /* Gallery Section - Masonry Layout */
-        .gallery-grid {
-            column-count: 1;
-            column-gap: 60px;
-            padding: 0 40px;
-        }
-
-        @media (min-width: 768px) {
-            .gallery-grid {
-                column-count: 2;
-            }
-        }
-
-        @media (min-width: 1100px) {
-            .gallery-grid {
-                column-count: 3;
-            }
-        }
-
-        .artwork {
-            position: relative;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(91, 53, 21, 0.1);
-            min-height: 400px;
-            break-inside: avoid;
-            page-break-inside: avoid;         
-            -webkit-column-break-inside: avoid;
-            margin-bottom: 60px;
-            width: 100%;
-        }
-        
-        .artwork:hover {
-            transform: translateY(-10px) rotate(0.5deg);
-            box-shadow: 0 20px 60px rgba(91, 53, 21, 0.15);
-        }
-
-        .artwork-header {
-            padding: 40px 40px 20px;
+        /* Featured Content Section */
+        .featured-content {
+            padding: 80px 40px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .artwork-title {
-            font-size: 2rem;
+        .featured-content h2 {
+            font-size: 1.5rem;
+            color: #7d5a39;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .featured-item {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(91, 53, 21, 0.1);
+        }
+
+        .featured-title {
+            font-size: 1.8rem;
             color: #5B3515;
             margin-bottom: 15px;
             font-weight: 300;
-            line-height: 1.2;
         }
 
-        .artwork-description {
-            font-size: 1rem;
+        .featured-title a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .featured-title a:hover {
+            border-bottom-color: #5B3515;
+        }
+
+        .featured-type {
+            font-size: 0.9rem;
+            color: #7d5a39;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured-excerpt {
+            font-size: 1.1rem;
             color: #7d5a39;
             line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .artwork-media {
-            position: relative;
-            margin: 0 20px 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            background: #faf8f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .artwork-media iframe {
-            width: 100%;
-            border-radius: 10px;
-            border: none;
-        }
-
-        .artwork-links {
-            display: none;
-        }
-        
-        .art-link {
-            color: #5B3515;
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 80px 20px;
-            border: 1px solid rgba(91, 53, 21, 0.3);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            background: rgba(245, 241, 232, 0.5);
-        }
-
-        .art-link:hover {
-            background: #5B3515;
-            color: #F5F1E8;
-            transform: translateY(-2px);
-        }
-
-        /* Featured Work */
-        .featured {
-            grid-column: 1 / -1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .featured .artwork-title {
-            font-size: 2.5rem;
+            font-style: italic;
         }
 
         /* Sheet Music Section */
@@ -420,18 +371,7 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 0 20px;
-            }
-
-            .artwork-header, .artwork-links {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .commission, .sheet-music, .literature, .social {
+            .featured-content, .commission, .sheet-music, .social {
                 padding: 60px 20px;
             }
 
@@ -441,6 +381,10 @@
 
             .sheet-links, .social-links {
                 gap: 20px;
+            }
+
+            .featured-item {
+                padding: 25px;
             }
         }
     </style>
@@ -456,23 +400,20 @@
         </div>
     </section>
 
-    <!-- Featured Work - NO "Featured" label  -->
-    <article class="artwork featured fade-in">
-        <div class="artwork-header">
-            <h2 class="artwork-title">Burden of the Light</h2>
-            <p class="artwork-description">The journey has begun.</p>
+    <!-- Featured Content Section - Dynamic -->
+    <section class="featured-content fade-in">
+        <h2 class="section-title">Latest</h2>
+        <div class="featured-item" id="featuredContent">
+            <!-- Content will be loaded dynamically -->
+            <div class="featured-type">Note</div>
+            <h3 class="featured-title">
+                <a href="/musings/distribution-odyssey.html">The Odyssey of One Classical Piece in 2025</a>
+            </h3>
+            <p class="featured-excerpt">A classical composer's journey through the modern music distribution landscape.</p>
         </div>
-        
-        <div class="artwork-media">
-            <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1028427117/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light">Burden of the Light by Gokul Salvadi</a></iframe>
-        </div>
-        
-        <div class="artwork-links">
-            <a href="https://gsalvadi.bandcamp.com/album/burden-of-the-light" class="art-link">Pre-Order & RSVP</a>
-        </div>
-    </article>
+    </section>
 
-    <!-- Sheet Music Section - NO description -->
+    <!-- Sheet Music Section -->
     <section class="sheet-music fade-in">
         <h2 class="section-title">Sheet Music</h2>
         
@@ -498,7 +439,7 @@
         </div>
     </section>
 
-    <!-- Newsletter Section - simplified -->
+    <!-- Newsletter Section -->
     <section class="newsletter fade-in">
         <div class="newsletter-content">
             <h2 class="section-title">Newsletter</h2>
@@ -596,7 +537,7 @@
         </div>
     </section>
     
-    <!-- Social Media Section - NO heading/symbol -->
+    <!-- Social Media Section -->
     <section class="social fade-in">
         <div class="social-links">
             <a href="/musings/" class="social-link">Musings</a>
@@ -640,17 +581,6 @@
             }
         });
 
-        // Hover effects for artworks
-        document.querySelectorAll('.artwork').forEach(artwork => {
-            artwork.addEventListener('mouseenter', function() {
-                this.style.zIndex = '10';
-            });
-            
-            artwork.addEventListener('mouseleave', function() {
-                this.style.zIndex = '1';
-            });
-        });
-
         // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -664,6 +594,64 @@
                 }
             });
         });
+
+        // Automatic featured content loading
+        async function loadLatestContent() {
+            try {
+                const response = await fetch('/musings/');
+                const html = await response.text();
+                
+                // Create a temporary DOM parser
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Find all post entries
+                const posts = doc.querySelectorAll('.post-entry');
+                
+                if (posts.length === 0) {
+                    return; // Keep default content if no posts found
+                }
+                
+                // Priority: Latest release first, then latest note
+                let featuredPost = null;
+                let latestRelease = null;
+                let latestNote = null;
+                
+                posts.forEach(post => {
+                    if (post.classList.contains('release') && !latestRelease) {
+                        latestRelease = post;
+                    } else if (post.classList.contains('note') && !latestNote) {
+                        latestNote = post;
+                    }
+                });
+                
+                // Choose what to feature (releases get priority)
+                featuredPost = latestRelease || latestNote;
+                
+                if (featuredPost) {
+                    const title = featuredPost.querySelector('.post-title').textContent.trim();
+                    const excerpt = featuredPost.querySelector('.post-excerpt').textContent.trim();
+                    const link = featuredPost.querySelector('.post-title').getAttribute('href');
+                    const type = featuredPost.querySelector('.post-type').textContent.trim();
+                    
+                    // Update the featured content
+                    const featuredContainer = document.getElementById('featuredContent');
+                    featuredContainer.innerHTML = `
+                        <div class="featured-type">${type}</div>
+                        <h3 class="featured-title">
+                            <a href="/musings/${link}">${title}</a>
+                        </h3>
+                        <p class="featured-excerpt">${excerpt}</p>
+                    `;
+                }
+            } catch (error) {
+                console.log('Could not load latest content, using fallback');
+                // Keep the loading content as fallback
+            }
+        }
+        
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadLatestContent);
     </script>
 </body>
 </html>
