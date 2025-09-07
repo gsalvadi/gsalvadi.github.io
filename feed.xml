@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gokul Salvadi - Musings</title>
+    <link>https://beingokul.com/</link>
+    <description>A composer working between classical traditions and contemporary forms</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Sep 2025 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://beingokul.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <generator>Hand-crafted RSS</generator>
+    
+    <!-- Item 1: Latest Post -->
+    <item>
+      <title>The Odyssey of One Classical Piece in 2025</title>
+      <link>https://beingokul.com/musings/distribution-odyssey.html</link>
+      <description>A classical composer's journey through the modern music distribution landscape.</description>
+      <pubDate>Sun, 07 Sep 2025 12:00:00 GMT</pubDate>
+      <guid>https://beingokul.com/musings/distribution-odyssey.html</guid>
+      <category>Note</category>
+    </item>
+    
+    <!-- Item 2: Trilogy Release -->
+    <item>
+      <title>Burden of the Light: Ancient Forms for String Orchestra</title>
+      <link>https://beingokul.com/musings/burden-of-the-light.html</link>
+      <description>A trilogy exploring the arc of 'knowing' through ancient musical forms.</description>
+      <pubDate>Sun, 01 Sep 2025 12:00:00 GMT</pubDate>
+      <guid>https://beingokul.com/musings/burden-of-the-light.html</guid>
+      <category>Note</category>
+    </item>
+    
+    <!-- Add future posts here in reverse chronological order -->
+    
+  </channel>
+</rss>
