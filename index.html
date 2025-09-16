@@ -139,6 +139,19 @@
             font-style: italic;
         }
 
+        /* Read more link styling - underlined instead of color change */
+        .featured-item a {
+            color: #5B3515;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .featured-item a:hover {
+            color: #5B3515;
+            border-bottom-color: #5B3515;
+        }
+
         /* Sheet Music Section */
         .sheet-music {
             background: transparent;
@@ -400,18 +413,16 @@
         </div>
     </section>
 
-    <!-- Featured Content Section - Dynamic -->
+    <!-- Featured Content Section - Manual -->
     <section class="featured-content fade-in">
         <h2 class="section-title">Latest</h2>
         <div class="featured-item" id="featuredContent">
-            <!-- Content will be loaded automatically from musings -->
-            <div class="featured-type">updates</div>
+            <div class="featured-type">Update</div>
             <h3 class="featured-title">
-                <p> Pre-save: From Darkness to Light</p>
-               
+                <p>Pre-save: From Darkness to Light</p>
             </h3>
-            <p class="featured-excerpt">Architecture companion of From Darkness to Light: Passacaglia in F Minor and pre save </p>
-             <a href="https://beingokul.com/musings/passacaglia-architecture.html">Read more...</a>
+            <p class="featured-excerpt">Architecture companion of From Darkness to Light: Passacaglia in F Minor and pre save</p>
+            <a href="https://beingokul.com/musings/passacaglia-architecture.html">Read more...</a>
         </div>
     </section>
 
@@ -598,7 +609,5 @@
             });
         });
     </script>
-</body>
-</html>
 </body>
 </html>
