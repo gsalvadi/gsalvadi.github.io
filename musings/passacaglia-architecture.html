@@ -1,217 +1,380 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Darkness to Light: A Passacaglia's Architecture - Gokul Salvadi</title>
-    <meta name="description" content="An architectural companion to Passacaglia in F Minor, releasing September 26th.">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    
+    <title>Musings - Gokul Salvadi</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: Georgia, serif;
-            background-color: #F5F1E8;
-            color: #5B3515;
             line-height: 1.6;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            font-weight: normal;
-            margin-bottom: 15px;
             color: #5B3515;
+            background-color: #F5F1E8;
+            padding: 40px 20px;
+            max-width: 650px;
+            margin: 0 auto;
         }
-
-        .header .subtitle {
-            font-style: italic;
-            color: rgba(91, 53, 21, 0.7);
-            margin-bottom: 20px;
-            font-size: 1rem;
+        
+        header {
+            margin-bottom: 60px;
+            text-align: center;
         }
-
-        .back-link {
+        
+        h1 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
             color: #5B3515;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9em;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
         }
-
-        .back-link:hover {
-            text-decoration: underline;
+        
+        .nav-link:hover {
+            border-bottom-color: #5B3515;
         }
-
-        .content {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        
+        /* Filter buttons - subtle, optional */
+        .filters {
             margin-bottom: 40px;
-        }
-
-        .content p {
-            margin-bottom: 20px;
-        }
-
-        .content h2 {
-            font-size: 1.4rem;
-            font-weight: normal;
-            margin: 35px 0 20px 0;
-            color: #5B3515;
-        }
-
-        .content h2:first-child {
-            margin-top: 0;
-        }
-
-        .release-info {
-            background: rgba(245, 241, 232, 0.6);
-            padding: 25px;
-            border-radius: 6px;
-            margin: 30px 0;
-            border-left: 4px solid #5B3515;
             text-align: center;
         }
-
-        .release-date {
-            font-size: 1.3rem;
+        
+        .filter-btn {
+            background: none;
+            border: 1px solid #5B3515;
+            color: #5B3515;
+            padding: 5px 12px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 0.9em;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            opacity: 1;
+        }
+        
+        .post-entry {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        /* Visual category indicators */
+        .post-entry.release::before {
+            content: "♪";
+            position: absolute;
+            left: 0;
+            opacity: 0.5;
+        }
+        
+        .post-entry.update::before {
+            content: "◦";
+            position: absolute;
+            left: 0;
+            opacity: 0.5;
+        }
+        
+        .post-entry.note::before {
+            content: "¶";
+            position: absolute;
+            left: 0;
+            opacity: 0.5;
+        }
+        
+        .post-date {
+            font-size: 0.85em;
+            opacity: 0.6;
+            margin-bottom: 5px;
+        }
+        
+        .post-title {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 1.1em;
+            line-height: 1.4;
+            display: inline-block;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .post-title:hover {
+            border-bottom-color: #5B3515;
+        }
+        
+        .post-type {
+            display: inline-block;
+            font-size: 0.75em;
+            opacity: 0.5;
+            margin-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .post-excerpt {
+            margin-top: 5px;
+            font-size: 0.95em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        /* Section dividers */
+        .section-year {
+            margin: 50px 0 25px 0;
+            font-size: 1em;
+            opacity: 0.5;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-year::before,
+        .section-year::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #5B3515;
+            opacity: 0.3;
+        }
+        
+        .section-year::before {
+            left: 0;
+        }
+        
+        .section-year::after {
+            right: 0;
+        }
+        
+        footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #5B3515;
+            text-align: center;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        /* Pre-Save Embed Section */
+        .presave-section {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 40px -20px 0 -20px;
+            padding: 40px 20px;
+            border-top: 2px solid #5B3515;
+            transition: all 0.3s ease;
+        }
+        
+        .embed-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .embed-container h2 {
+            font-size: 1.4rem;
             color: #5B3515;
             margin-bottom: 10px;
-            font-weight: bold;
+            font-weight: normal;
         }
-
-        .presave-link {
+        
+        .release-info {
+            color: rgba(91, 53, 21, 0.7);
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+        
+        .embed-wrapper {
+            margin: 25px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .presave-links {
+            margin: 25px 0;
+        }
+        
+        .presave-btn {
             display: inline-block;
             background: rgba(91, 53, 21, 0.08);
             color: #5B3515;
-            padding: 12px 30px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 4px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             border: 1px solid rgba(91, 53, 21, 0.15);
-            margin: 15px 10px;
+            margin: 5px;
         }
-
-        .presave-link:hover {
+        
+        .presave-btn:hover {
             background: rgba(91, 53, 21, 0.12);
             transform: translateY(-1px);
-            border-color: rgba(91, 53, 21, 0.25);
         }
-
-        .architectural-note {
-            background: #faf8f2;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 25px 0;
-            font-style: italic;
-            border: 1px solid rgba(91, 53, 21, 0.1);
+        
+        .presave-btn.secondary {
+            background: transparent;
+            border: 1px solid rgba(91, 53, 21, 0.3);
         }
-
-        .footer-nav {
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .footer-nav a {
-            color: #5B3515;
-            text-decoration: none;
-            margin: 0 15px;
+        
+        .close-embed {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #5B3515;
+            color: #F5F1E8;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
             font-size: 14px;
+            transition: all 0.2s ease;
         }
-
-        .footer-nav a:hover {
-            text-decoration: underline;
+        
+        .close-embed:hover {
+            background: #4a2d12;
+            transform: scale(1.1);
         }
-
+        
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .content {
-                padding: 25px;
-            }
-            
-            .header h1 {
-                font-size: 1.8rem;
+            .presave-section {
+                margin: 40px -15px 0 -15px;
+                padding: 30px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <a href="../" class="back-link">← Back to main site</a>
-            <h1>From Darkness to Light: A Passacaglia's Architecture</h1>
-            <p class="subtitle">An architectural companion</p>
-        </header>
-
-        <article class="content">
-            <div class="release-info">
-                <div class="release-date">September 26, 2025</div>
-                <p><strong>From Darkness to Light: Passacaglia in F Minor</strong></p>
-                <a href="#" class="presave-link">Pre-Save (All Platforms)</a>
-            </div>
-
-            <p>A passacaglia is architecture in motion. Four measures of bass line become the foundation upon which everything else is built—twelve variations that trace a journey from confinement to liberation.</p>
-
-            <h2>The Foundation</h2>
-            
-            <p>F minor. The key of deep introspection, of questions asked in darkness. The bass line descends, circles back on itself, creates a harmonic prison that feels both inevitable and inescapable. Like walking the same four hallways of a building, discovering new details each time but never finding the exit.</p>
-
-            <div class="architectural-note">
-                The passacaglia form originated in 17th-century Spain as a street dance. Street music became court music became sacred music—transformation through repetition, exactly what this piece explores.
-            </div>
-
-            <h2>The Variations</h2>
-
-            <p>Each variation is a room built on the same foundation, yet opening onto different views. The first few variations feel like basement chambers—low strings exploring the depths of the harmonic cycle, finding beauty in constraint.</p>
-
-            <p>By the middle variations, we've climbed to ground level. Violins begin their conversations, fragments of melody that suggest windows, doorways, possibilities. The same harmonic foundation now supports different architectures of hope.</p>
-
-            <p>The final variations ascend toward something resembling joy—not the naive happiness that ignores darkness, but the earned lightness that comes from having walked through it. The strings don't abandon the bass line; they transform its meaning.</p>
-
-            <h2>The Resolution</h2>
-
-            <p>We end not by escaping the cycle, but by learning to dance within it. The same four measures that felt like chains now feel like a rhythm, a heartbeat, a home base from which to venture out and return.</p>
-
-            <p>This is the first movement of <em>Burden of the Light</em>—the trilogy that traces the complete arc from seeking truth to learning how to carry it. But it stands alone too, complete in its six-minute journey from confinement to freedom.</p>
-
-            <div class="architectural-note">
-                Written for string orchestra in the tradition of Bach's Passacaglia in C Minor, but speaking to contemporary souls who know that the hardest prisons are the ones we build in our own minds.
-            </div>
-
-            <p>The passacaglia teaches us something essential: transformation doesn't require abandoning the foundation. Sometimes freedom comes not from breaking the pattern, but from discovering new ways to move within it.</p>
-
-            <div class="release-info">
-                <p><strong>Pre-save now. Experience the architecture September 26th.</strong></p>
-                <a href="https://ffm.to/y8vbdnb" class="presave-link">Pre-Save (All Platforms)</a>
-                <a href="../#newsletter" class="presave-link">Get Updates</a>
-            </div>
+    <header>
+        <h1>Musings</h1>
+        <a href="/" class="nav-link">← Back to main</a>
+    </header>
+    
+    <!-- Optional: Simple filter buttons -->
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterPosts('all')">All</button>
+        <button class="filter-btn" onclick="filterPosts('release')">Releases</button>
+        <button class="filter-btn" onclick="filterPosts('note')">Notes</button>
+        <button class="filter-btn" onclick="filterPosts('update')">Updates</button>
+    </div>
+    
+    <main>
+        <div class="section-year">2025</div>
+        
+       <!-- Update Pre Save -->
+        <article class="post-entry update">
+            <div class="post-date">September 16</div>
+            <a href="#presave-embed" class="post-title" onclick="showEmbed(event)">
+                Release update (Darkness to Light: Passacaglia in F Minor)
+            </a>
+            <span class="post-type">Update</span>
+            <p class="post-excerpt">Pre-save now available for September 26th release.</p>
         </article>
 
-        <nav class="footer-nav">
-            <a href="../">Home</a>
-            <a href="../#newsletter">Newsletter</a>
-            <a href="/">More Musings</a>
-        </nav>
-    </div>
+        <!-- Distribution Odyssey Note Entry -->
+        <article class="post-entry note">
+            <div class="post-date">September 7</div>
+            <a href="distribution-odyssey.html" class="post-title">
+                The Odyssey of One Classical Piece in 2025
+            </a>
+            <span class="post-type">Note</span>
+            <p class="post-excerpt">A classical composer's journey through the modern music distribution landscape.</p>
+        </article>
+          <!-- Trilogy Release Entry -->
+        <article class="post-entry release">
+            <div class="post-date">November 30</div>
+            <a href="burden-of-the-light.html" class="post-title">
+                Burden of the Light: Ancient Forms for String Orchestra
+            </a>
+            <span class="post-type">Release</span>
+            <p class="post-excerpt">A trilogy exploring the arc of 'knowing' through ancient musical forms.</p>
+        </article>
+    </main>
+    
+    <!-- Pre-Save Embed Section -->
+    <section id="presave-embed" class="presave-section" style="display: none;">
+        <div class="embed-container">
+            <h2>From Darkness to Light: Passacaglia in F Minor</h2>
+            <p class="release-info">Releasing September 26, 2025</p>
+            
+            <!-- Bandcamp Embed -->
+            <div class="embed-wrapper">
+                <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1234567890/size=large/bgcol=ffffff/linkcol=5B3515/tracklist=false/artwork=small/transparent=true/" seamless>
+                    <a href="#">From Darkness to Light: Passacaglia in F Minor</a>
+                </iframe>
+            </div>
+            
+            <!-- Pre-Save Links -->
+            <div class="presave-links">
+                <a href="#" class="presave-btn">Pre-Save (All Platforms)</a>
+                <a href="passacaglia-architecture.html" class="presave-btn secondary">Read About It</a>
+            </div>
+            
+            <button class="close-embed" onclick="hideEmbed()">✕ Close</button>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Gokul Salvadi. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function filterPosts(type) {
+            // Get all posts and buttons
+            const posts = document.querySelectorAll('.post-entry');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide posts
+            posts.forEach(post => {
+                if (type === 'all') {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = post.classList.contains(type) ? 'block' : 'none';
+                }
+            });
+        }
+        
+        function showEmbed(event) {
+            event.preventDefault();
+            const embedSection = document.getElementById('presave-embed');
+            embedSection.style.display = 'block';
+            embedSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+        
+        function hideEmbed() {
+            const embedSection = document.getElementById('presave-embed');
+            embedSection.style.display = 'none';
+            // Scroll back to the update entry
+            document.querySelector('.post-entry.update').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    </script>
 </body>
 </html>
