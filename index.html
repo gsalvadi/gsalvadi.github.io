@@ -114,19 +114,33 @@
             letter-spacing: 1px;
         }
 
-        /* Substack post image styling */
-        .substack-post-image {
+        /* Substack embed styling */
+        .substack-post-embed {
             width: 100%;
             max-width: 500px;
-            height: auto;
+            margin: 20px auto;
             border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 4px 12px rgba(91, 53, 21, 0.1);
-            transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
-        .substack-post-image:hover {
-            transform: translateY(-2px);
+        .substack-post-embed p {
+            font-size: 1.1rem;
+            color: #7d5a39;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        .substack-post-embed a {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.3s ease;
+            font-style: italic;
+        }
+
+        .substack-post-embed a:hover {
+            border-bottom-color: #5B3515;
         }
 
         .featured-link {
@@ -392,8 +406,9 @@
                 padding: 25px;
             }
 
-            .substack-post-image {
+            .substack-post-embed {
                 max-width: 100%;
+                margin: 15px 0;
             }
         }
     </style>
@@ -415,17 +430,13 @@
         <div class="featured-item">
             <div class="featured-type">Blog</div>
             
-            <!-- Clean image display -->
-            <img src="https://substackcdn.com/image/fetch/$s_!n2bz!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbeingokul.substack.com%2Fapi%2Fv1%2Fpress_kit%2F174495607.jpg%3FbgColor%3D%2523be601e%26textColor%3D%2523ffffff%26aspectRatio%3Dinstagram%26hidePreviewText%3Dtrue%26isDraft%3Dfalse%26hash%3D-342309372%26version%3D13" 
-                 alt="When Bach Was Behind the Bars - Sebastian Bach & Prince Leopold's Story" 
-                 class="substack-post-image">
-            
-            <a href="https://blog.beingokul.com/p/when-bach-was-behind-the-bars" 
-               target="_blank" 
-               rel="noopener" 
-               class="featured-link">
-                Read →
-            </a>
+            <!-- Substack post embed -->
+            <div class="substack-post-embed">
+                <p lang="en">When Bach Was Behind the Bars</p>
+                <p>Sebastian Bach & Prince Leopold's Story</p>
+                <a data-post-link href="https://open.substack.com/pub/beingokul/p/when-bach-was-behind-the-bars?r=ey48i&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true">Read →</a>
+            </div>
+            <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
         </div>
     </section>
 
