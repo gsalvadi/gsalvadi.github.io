@@ -453,25 +453,28 @@
         }
 
         .contact-email {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: rgba(91, 53, 21, 0.08);
             color: #5B3515;
-            padding: 16px 40px;
+            padding: 16px 16px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             border: 1px solid rgba(91, 53, 21, 0.15);
             transition: all 0.2s ease;
+            min-width: 44px;
             min-height: 44px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            width: 44px;
+            height: 44px;
         }
 
         .contact-email:hover {
             background: rgba(91, 53, 21, 0.12);
             border-color: rgba(91, 53, 21, 0.25);
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(91, 53, 21, 0.1);
         }
 
         .contact-note {
@@ -606,8 +609,8 @@
             </p>
 
             <div class="contact-mailto">
-                <a href="mailto:music@beingokul.com" class="contact-email">
-                    <span>✉</span> music@beingokul.com
+                <a href="mailto:music@beingokul.com" class="contact-email" title="music@beingokul.com">
+                    @
                 </a>
                 <p class="contact-note">
                     for commissions, comments, and communication
