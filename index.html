@@ -5,7 +5,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokul Salvadi</title>
+    <title>Gokul Salvadi - Composer</title>
+    <meta name="description" content="Gokul Salvadi is a contemporary classical composer specializing in string orchestration and cross-cultural musical exploration.">
+    <meta property="og:title" content="Gokul Salvadi - Composer">
+    <meta property="og:description" content="Explore contemporary classical compositions and commissions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beingokul.com">
     <style>
         * {
             margin: 0;
@@ -19,6 +24,62 @@
             color: #5B3515;
             background: #F5F1E8;
             overflow-x: hidden;
+        }
+
+        /* Skip Links - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #5B3515;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Navigation Header */
+        nav.header {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
+            padding: 20px 40px;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        nav.header a {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        nav.header a:hover {
+            color: #7d5a39;
+            transform: translateY(-1px);
+        }
+
+        nav.header a.active {
+            border-bottom: 2px solid #5B3515;
+            padding-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            nav.header {
+                padding: 15px 20px;
+                gap: 20px;
+                font-size: 0.85rem;
+            }
         }
 
         /* Hero Section */
@@ -61,7 +122,7 @@
         .availability {
             font-size: 1rem;
             color: #7d5a39;
-            padding: 12px 32px;
+            padding: 14px 40px;
             border: 1px solid rgba(125, 90, 57, 0.3);
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.4);
@@ -71,6 +132,10 @@
             letter-spacing: 0.3px;
             font-weight: normal;
             cursor: pointer;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .availability:hover {
@@ -242,9 +307,11 @@
 
         /* Newsletter Section */
         .newsletter {
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
-            background: rgba(91, 53, 21, 0.02);
+            background: linear-gradient(135deg, rgba(91, 53, 21, 0.06) 0%, rgba(91, 53, 21, 0.02) 100%);
+            border-top: 1px solid rgba(91, 53, 21, 0.1);
+            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
         }
 
         .newsletter-content {
@@ -278,8 +345,9 @@
             border-radius: 4px !important;
             color: #5B3515 !important;
             font-family: Georgia, serif !important;
-            font-size: 12px !important;
-            padding: 8px 12px !important;
+            font-size: 14px !important;
+            padding: 10px 12px !important;
+            min-height: 44px !important;
         }
 
         .newsletter input[type="text"]:focus {
@@ -294,12 +362,13 @@
             border: 1px solid rgba(91, 53, 21, 0.15) !important;
             border-radius: 4px !important;
             font-family: Georgia, serif !important;
-            font-size: 12px !important;
+            font-size: 14px !important;
             text-transform: none !important;
             letter-spacing: 0.2px !important;
             transition: all 0.2s ease !important;
             font-weight: normal !important;
-            padding: 8px 16px !important;
+            padding: 10px 20px !important;
+            min-height: 44px !important;
         }
 
         .newsletter input[type="button"]:hover {
@@ -351,9 +420,10 @@
 
         /* Commission Section */
         .commission {
-            background: linear-gradient(135deg, rgba(91, 53, 21, 0.05) 0%, rgba(91, 53, 21, 0.02) 100%);
+            background: linear-gradient(135deg, rgba(91, 53, 21, 0.08) 0%, rgba(91, 53, 21, 0.04) 100%);
             padding: 100px 40px;
             text-align: center;
+            border-top: 2px solid rgba(91, 53, 21, 0.15);
         }
 
         .commission-content {
@@ -382,11 +452,33 @@
             text-align: center;
         }
 
+        .contact-email {
+            display: inline-block;
+            background: rgba(91, 53, 21, 0.08);
+            color: #5B3515;
+            padding: 16px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: 1px solid rgba(91, 53, 21, 0.15);
+            transition: all 0.2s ease;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-email:hover {
+            background: rgba(91, 53, 21, 0.12);
+            border-color: rgba(91, 53, 21, 0.25);
+            transform: translateY(-2px);
+        }
+
         .contact-note {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #7d5a39;
-            font-style: italic;
-            opacity: 0.8;
+            opacity: 0.7;
+            margin-top: 20px;
         }
 
         /* Footer Styles */
@@ -451,6 +543,17 @@
     </style>
 </head>
 <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Header -->
+    <nav class="header">
+        <a href="/" class="active">Home</a>
+        <a href="/musings/">Musings</a>
+        <a href="#scores">Scores</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -461,6 +564,8 @@
         </div>
     </section>
 
+    <!-- Main Content -->
+    <main id="main-content">
     <!-- Featured Content Section - Updated -->
     <section class="featured-content fade-in">
         <h2 class="section-title">Latest</h2>
@@ -479,7 +584,7 @@
     </section>
 
     <!-- Sheet Music Section - Updated with prominent Sonolize link -->
-    <section class="sheet-music fade-in">
+    <section class="sheet-music fade-in" id="scores">
         <h2 class="section-title">Scores available</h2>
         
         <div class="sheet-links">
@@ -493,7 +598,7 @@
     </section>
 
     <!-- Commission Section -->
-    <section class="commission">
+    <section class="commission" id="contact">
         <div class="commission-content">
             <h2 class="section-title">Contact</h2>
             <p class="commission-text">
@@ -501,12 +606,16 @@
             </p>
 
             <div class="contact-mailto">
+                <a href="mailto:music@beingokul.com" class="contact-email">
+                    <span>✉</span> music@beingokul.com
+                </a>
                 <p class="contact-note">
-                    Send eMail to : music(at)beingokul(dot)com
+                    Available for new projects and opportunities
                 </p>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Newsletter Section -->
     <section class="newsletter fade-in">
@@ -621,6 +730,25 @@
           <br>
          <p>&copy; 2025 Gokul Salvadi. All rights reserved.</p>
     </footer>
+
+    <!-- Schema.org Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Gokul Salvadi",
+        "url": "https://beingokul.com",
+        "image": "https://beingokul.com/Gokul%20Salvadi.png",
+        "jobTitle": "Composer",
+        "description": "Contemporary classical composer specializing in string orchestration and cross-cultural musical exploration",
+        "sameAs": [
+            "https://blog.beingokul.com",
+            "https://gsalvadi.bandcamp.com",
+            "https://www.sonolize.com/nl/componist/salvadi-gokul"
+        ],
+        "email": "music@beingokul.com"
+    }
+    </script>
 
     <script>
         // Load the actual Substack image

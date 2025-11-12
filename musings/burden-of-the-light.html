@@ -23,6 +23,49 @@
             font-size: 16px;
         }
 
+        /* Skip Links - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #5B3515;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Navigation Header */
+        nav.header {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
+            padding: 15px 20px;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav.header a {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        nav.header a:hover {
+            color: #7d5a39;
+            transform: translateY(-1px);
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -203,9 +246,20 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Header -->
+    <nav class="header">
+        <a href="/">Home</a>
+        <a href="/musings/">Musings</a>
+        <a href="/#scores">Scores</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="main-content">
         <header class="header">
-            <a href="../" class="back-link">← Back to main site</a>
+            <a href="/musings/" class="back-link">← Back to Musings</a>
             <h1>Burden of the Light</h1>
             <p class="subtitle">@</p>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">

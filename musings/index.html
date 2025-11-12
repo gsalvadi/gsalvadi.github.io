@@ -6,34 +6,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musings - Gokul Salvadi</title>
+    <meta name="description" content="Thoughts on music, composition, and the creative process. Blog posts and reflections by composer Gokul Salvadi.">
+    <meta property="og:title" content="Musings - Gokul Salvadi">
+    <meta property="og:description" content="A composer's thoughts on music and the creative process.">
+    <meta property="og:type" content="blog">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: Georgia, serif;
             line-height: 1.6;
             color: #5B3515;
             background-color: #F5F1E8;
-            padding: 40px 20px;
-            max-width: 650px;
-            margin: 0 auto;
         }
-        
+
+        /* Skip Links - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #5B3515;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Navigation Header */
+        nav.header {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
+            padding: 15px 20px;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav.header a {
+            color: #5B3515;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        nav.header a:hover {
+            color: #7d5a39;
+            transform: translateY(-1px);
+        }
+
+        nav.header a.active {
+            border-bottom: 2px solid #5B3515;
+            padding-bottom: 4px;
+        }
+
         header {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             text-align: center;
+            padding: 40px 20px 20px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
+
         h1 {
             font-size: 2.5em;
             font-weight: normal;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
-        
+
         .nav-link {
             color: #5B3515;
             text-decoration: none;
@@ -41,33 +94,54 @@
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s;
         }
-        
+
         .nav-link:hover {
             border-bottom-color: #5B3515;
+        }
+
+        main {
+            padding: 0 20px;
+            max-width: 650px;
+            margin: 0 auto;
         }
         
         /* Filter buttons - subtle, optional */
         .filters {
             margin-bottom: 40px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-        
+
         .filter-btn {
-            background: none;
-            border: 1px solid #5B3515;
+            background: rgba(91, 53, 21, 0.05);
+            border: 1px solid rgba(91, 53, 21, 0.3);
             color: #5B3515;
-            padding: 5px 12px;
-            margin: 0 5px;
+            padding: 8px 16px;
             cursor: pointer;
             font-family: Georgia, serif;
             font-size: 0.9em;
-            opacity: 0.6;
-            transition: opacity 0.3s;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
         }
-        
-        .filter-btn:hover,
+
+        .filter-btn:hover {
+            opacity: 0.9;
+            background: rgba(91, 53, 21, 0.08);
+            border-color: rgba(91, 53, 21, 0.4);
+        }
+
         .filter-btn.active {
             opacity: 1;
+            background: rgba(91, 53, 21, 0.12);
+            border-color: rgba(91, 53, 21, 0.5);
+            font-weight: 500;
         }
         
         .post-entry {
@@ -173,9 +247,19 @@
     </style>
 </head>
 <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Header -->
+    <nav class="header">
+        <a href="/">Home</a>
+        <a href="/musings/" class="active">Musings</a>
+        <a href="/#scores">Scores</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+
     <header>
         <h1>Musings</h1>
-        <a href="/" class="nav-link">← Back to main</a>
     </header>
     
     <!-- Optional: Simple filter buttons -->
@@ -186,10 +270,20 @@
         <button class="filter-btn" onclick="filterPosts('update')">Updates</button>
     </div>
     
-    <main>
+    <main id="main-content">
         <div class="section-year">2025</div>
-        
-       <!-- Update Pre Save -->
+
+        <!-- Trilogy Release Entry (Most Recent) -->
+        <article class="post-entry release">
+            <div class="post-date">November 30</div>
+            <a href="burden-of-the-light.html" class="post-title">
+                Burden of the Light: Ancient Forms for String Orchestra
+            </a>
+            <span class="post-type">Release</span>
+            <p class="post-excerpt">A trilogy exploring the arc of 'knowing' through ancient musical forms.</p>
+        </article>
+
+        <!-- Update Pre Save -->
         <article class="post-entry update">
             <div class="post-date">September 16</div>
             <a href="passacaglia-architecture.html" class="post-title">
@@ -207,15 +301,6 @@
             </a>
             <span class="post-type">Note</span>
             <p class="post-excerpt">A classical composer's journey through the modern music distribution landscape.</p>
-        </article>
-          <!-- Trilogy Release Entry -->
-        <article class="post-entry release">
-            <div class="post-date">November 30</div>
-            <a href="burden-of-the-light.html" class="post-title">
-                Burden of the Light: Ancient Forms for String Orchestra
-            </a>
-            <span class="post-type">Release</span>
-            <p class="post-excerpt">A trilogy exploring the arc of 'knowing' through ancient musical forms.</p>
         </article>
     </main>
     
