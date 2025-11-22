@@ -5,12 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokul Salvadi - Composer</title>
-    <meta name="description" content="Gokul Salvadi is a contemporary classical composer specializing in string orchestration and cross-cultural musical exploration.">
-    <meta property="og:title" content="Gokul Salvadi - Composer">
-    <meta property="og:description" content="Explore contemporary classical compositions and commissions.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://beingokul.com">
+    <title>Gokul Salvadi</title>
     <style>
         * {
             margin: 0;
@@ -24,62 +19,6 @@
             color: #5B3515;
             background: #F5F1E8;
             overflow-x: hidden;
-        }
-
-        /* Skip Links - Accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #5B3515;
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Navigation Header */
-        nav.header {
-            position: sticky;
-            top: 0;
-            background: rgba(245, 241, 232, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
-            padding: 20px 40px;
-            z-index: 50;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-        }
-
-        nav.header a {
-            color: #5B3515;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            letter-spacing: 0.3px;
-        }
-
-        nav.header a:hover {
-            color: #7d5a39;
-            transform: translateY(-1px);
-        }
-
-        nav.header a.active {
-            border-bottom: 2px solid #5B3515;
-            padding-bottom: 4px;
-        }
-
-        @media (max-width: 768px) {
-            nav.header {
-                padding: 15px 20px;
-                gap: 20px;
-                font-size: 0.85rem;
-            }
         }
 
         /* Hero Section */
@@ -122,7 +61,7 @@
         .availability {
             font-size: 1rem;
             color: #7d5a39;
-            padding: 14px 40px;
+            padding: 12px 32px;
             border: 1px solid rgba(125, 90, 57, 0.3);
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.4);
@@ -132,10 +71,6 @@
             letter-spacing: 0.3px;
             font-weight: normal;
             cursor: pointer;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .availability:hover {
@@ -307,11 +242,9 @@
 
         /* Newsletter Section */
         .newsletter {
-            padding: 80px 40px;
+            padding: 60px 40px;
             text-align: center;
-            background: linear-gradient(135deg, rgba(91, 53, 21, 0.06) 0%, rgba(91, 53, 21, 0.02) 100%);
-            border-top: 1px solid rgba(91, 53, 21, 0.1);
-            border-bottom: 1px solid rgba(91, 53, 21, 0.1);
+            background: rgba(91, 53, 21, 0.02);
         }
 
         .newsletter-content {
@@ -345,9 +278,8 @@
             border-radius: 4px !important;
             color: #5B3515 !important;
             font-family: Georgia, serif !important;
-            font-size: 14px !important;
-            padding: 10px 12px !important;
-            min-height: 44px !important;
+            font-size: 12px !important;
+            padding: 8px 12px !important;
         }
 
         .newsletter input[type="text"]:focus {
@@ -362,13 +294,12 @@
             border: 1px solid rgba(91, 53, 21, 0.15) !important;
             border-radius: 4px !important;
             font-family: Georgia, serif !important;
-            font-size: 14px !important;
+            font-size: 12px !important;
             text-transform: none !important;
             letter-spacing: 0.2px !important;
             transition: all 0.2s ease !important;
             font-weight: normal !important;
-            padding: 10px 20px !important;
-            min-height: 44px !important;
+            padding: 8px 16px !important;
         }
 
         .newsletter input[type="button"]:hover {
@@ -420,10 +351,9 @@
 
         /* Commission Section */
         .commission {
-            background: linear-gradient(135deg, rgba(91, 53, 21, 0.08) 0%, rgba(91, 53, 21, 0.04) 100%);
+            background: linear-gradient(135deg, rgba(91, 53, 21, 0.05) 0%, rgba(91, 53, 21, 0.02) 100%);
             padding: 100px 40px;
             text-align: center;
-            border-top: 2px solid rgba(91, 53, 21, 0.15);
         }
 
         .commission-content {
@@ -452,36 +382,11 @@
             text-align: center;
         }
 
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(91, 53, 21, 0.08);
-            color: #5B3515;
-            padding: 16px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            border: 1px solid rgba(91, 53, 21, 0.15);
-            transition: all 0.2s ease;
-            min-width: 44px;
-            min-height: 44px;
-            width: 44px;
-            height: 44px;
-        }
-
-        .contact-email:hover {
-            background: rgba(91, 53, 21, 0.12);
-            border-color: rgba(91, 53, 21, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(91, 53, 21, 0.1);
-        }
-
         .contact-note {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #7d5a39;
-            opacity: 0.7;
-            margin-top: 20px;
+            font-style: italic;
+            opacity: 0.8;
         }
 
         /* Footer Styles */
@@ -546,17 +451,6 @@
     </style>
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Navigation Header -->
-    <nav class="header">
-        <a href="/" class="active">Home</a>
-        <a href="/musings/">Musings</a>
-        <a href="#scores">Scores</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -567,8 +461,6 @@
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main id="main-content">
     <!-- Featured Content Section - Updated -->
     <section class="featured-content fade-in">
         <h2 class="section-title">Latest</h2>
@@ -587,7 +479,7 @@
     </section>
 
     <!-- Sheet Music Section - Updated with prominent Sonolize link -->
-    <section class="sheet-music fade-in" id="scores">
+    <section class="sheet-music fade-in">
         <h2 class="section-title">Scores available</h2>
         
         <div class="sheet-links">
@@ -601,7 +493,7 @@
     </section>
 
     <!-- Commission Section -->
-    <section class="commission" id="contact">
+    <section class="commission">
         <div class="commission-content">
             <h2 class="section-title">Contact</h2>
             <p class="commission-text">
@@ -609,16 +501,12 @@
             </p>
 
             <div class="contact-mailto">
-                <a href="mailto:music@beingokul.com" class="contact-email" title="music@beingokul.com">
-                    @
-                </a>
                 <p class="contact-note">
-                    for commissions, comments, and communication
+                    Send eMail to : music(at)beingokul(dot)com
                 </p>
             </div>
         </div>
     </section>
-    </main>
 
     <!-- Newsletter Section -->
     <section class="newsletter fade-in">
@@ -639,9 +527,9 @@
             <!--Zoho Campaigns Web-Optin Form Starts Here-->
             <div id="sf3zc1fc41c42474050bcd4f6210b9d605adb5cdb4d5b696b3136e34df7251215510" data-type="signupform" style="opacity: 1;">
                 <div id="customForm">
-                    <div class="quick_form_7_css" style="background-color: rgb(245, 241, 232); width: 550px; z-index: 2; font-family: Arial; border: 1px solid rgb(206, 206, 206); overflow: hidden" name="SIGNUP_BODY">
+                    <div class="quick_form_7_css" style="background-color: rgb(245, 241, 232); width: 500px; z-index: 2; font-family: Arial; border: 1px solid rgb(206, 206, 206); overflow: hidden" name="SIGNUP_BODY">
                         <div>
-                            <div style="font-size: 15px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: center; padding: 20px 15px 15px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe</div>
+                            <div style="font-size: 14px; font-family: Arial; font-weight: bold; color: rgb(85, 85, 85); text-align: left; padding: 15px 15px 5px; width: 100%; display: block; box-sizing: border-box; background-color: rgb(245, 241, 232)" id="SIGNUP_HEADING">Subscribe</div>
                             <div style="position:relative;">
                                 <div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -660,24 +548,24 @@
                             </div>
                             <form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; text-align: center" action="https://zcsub-cmpzourl.maillist-manage.com/weboptin.zc" target="_zcSignup">
                                 <div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); font-size: 11px; margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none" id="errorMsgDiv">Please correct the marked field(s) below.</div>
-                                <div style="position: relative; width: 300px; height: 35px; display: block; margin: 0 auto 15px;" class="SIGNUP_FLD">
-                                    <div style="padding: 5px 0px 3px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Email</div>
-                                    <input type="text" style="font-size: 13px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 32px; z-index: 4; outline: none; padding: 8px 12px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+                                <div style="position: relative; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
+                                    <div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Email</div>
+                                    <input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
                                 </div>
-                                <div style="position: relative; width: 300px; height: 35px; display: block; margin: 0 auto 15px;" class="SIGNUP_FLD">
-                                    <div style="padding: 5px 0px 3px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Name</div>
-                                    <input type="text" style="font-size: 13px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 32px; z-index: 4; outline: none; padding: 8px 12px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="LASTNAME" id="EMBED_FORM_NAME_LABEL">
+                                <div style="position: relative; margin: 5px 0 20px 10px; width: 170px; height: 28px; display: inline-block" class="SIGNUP_FLD">
+                                    <div style="padding: 5px 0px; color: rgb(85, 85, 85); font-size: 12px; font-family: Arial; display: block; text-align: left">Name</div>
+                                    <input type="text" style="font-size: 12px; border-width: 1px; border-color: rgb(214, 205, 205); border-style: solid; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(113, 106, 106); text-align: left; font-family: &quot;Arial&quot;; border-radius: 4px; background-color: rgb(246, 246, 246); box-sizing: border-box" changeitem="SIGNUP_FORM_FIELD" name="LASTNAME" id="EMBED_FORM_NAME_LABEL">
                                 </div>
                                 
                                 <!-- Privacy Policy Notice -->
-                                <div style="position: relative; margin: 10px auto; display: block; text-align: center; padding: 0 15px;">
-                                    <p style="font-size: 11px; color: rgb(85, 85, 85); font-family: Arial; line-height: 1.5; margin: 0;">
+                                <div style="position: relative; margin: 10px; display: block; text-align: center;">
+                                    <p style="font-size: 10px; color: rgb(85, 85, 85); font-family: Arial; line-height: 1.4; margin: 0;">
                                         By subscribing, you agree to our <a href="policy.html" target="_blank" style="color: rgb(91, 53, 21); text-decoration: underline;">Privacy Policy</a>
                                     </p>
                                 </div>
-
-                                <div style="position: relative; width: 150px; height: 40px; margin: 15px auto 20px; display: block;" class="SIGNUP_FLD">
-                                    <input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; font-size: 15px; font-weight: 500; background-color: rgb(190, 96, 30); border-radius: 4px; transition: all 0.2s ease;" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Subscribe">
+                                
+                                <div style="position: relative; width: 100px; height: 28px; margin: 0 0 15px 12px; display: inline-block" class="SIGNUP_FLD">
+                                    <input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; font-size: 14px; background-color: rgb(190, 96, 30); border-radius: 4px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
                                 </div>
                                 <input type="hidden" id="fieldBorder" value="">
                                 <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
@@ -733,25 +621,6 @@
           <br>
          <p>&copy; 2025 Gokul Salvadi. All rights reserved.</p>
     </footer>
-
-    <!-- Schema.org Markup for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Person",
-        "name": "Gokul Salvadi",
-        "url": "https://beingokul.com",
-        "image": "https://beingokul.com/Gokul%20Salvadi.png",
-        "jobTitle": "Composer",
-        "description": "Contemporary classical composer specializing in string orchestration and cross-cultural musical exploration",
-        "sameAs": [
-            "https://blog.beingokul.com",
-            "https://gsalvadi.bandcamp.com",
-            "https://www.sonolize.com/nl/componist/salvadi-gokul"
-        ],
-        "email": "music@beingokul.com"
-    }
-    </script>
 
     <script>
         // Load the actual Substack image
